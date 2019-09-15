@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Index</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/plugins/select2/select2.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="page-content">
+        <!-- Page Content -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="nav nav-tabs nav-pills nav-justified" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                aria-controls="home" aria-selected="true">CLIENTS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                                aria-controls="profile" aria-selected="false">REFERENTIELS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                                aria-controls="contact" aria-selected="false">ACTES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                                aria-controls="contact" aria-selected="false">ADMINISTRATION</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-title">
+                                    <h2 class="mb-0">Administration</h2>
+                                </div>
+
+                                <div class="accordion-content">
+                                    <h5 class="accordion-content-title">REGLES DE GESTION</h5>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <button class="btn btn-link" type="button" data-toggle="collapse"
+                                                data-target="#publication" aria-expanded="true"
+                                                aria-controls="publication">
+                                                PUBLICATION
+                                            </button>
+                                        </div>
+
+                                        <div id="publication" class="collapse show" aria-labelledby="publication">
+                                            <div class="card-body bg-gray">
+                                                <form>
+                                                    <div class="form-row align-items-center">
+                                                        <div class="col-md-12">
+                                                            <label for="inputEmail4">Email</label>
+                                                        </div>
+                                                        <div class="col-md-10 my-1">
+                                                            <input type="email" class="form-control" id="inputEmail4"
+                                                                placeholder="Email">
+                                                        </div>
+                                                        <div class="col-md-2 my-1">
+                                                            <button type="submit"
+                                                                class="btn btn-primary w-100">Dupliquer</button>
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                    <div class="form-row align-items-center">
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputGroupSelect01">Select1</label>
+                                                            <select class="custom-select" id="inputGroupSelect01">
+                                                                <option selected>Choose...</option>
+                                                                <option value="1">One</option>
+                                                                <option value="2">Two</option>
+                                                                <option value="3">Three</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputGroupSelect01">Select1</label>
+                                                            <select class="custom-select" id="inputGroupSelect01">
+                                                                <option selected>Choose...</option>
+                                                                <option value="1">One</option>
+                                                                <option value="2">Two</option>
+                                                                <option value="3">Three</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputGroupSelect01">Select1</label>
+                                                            <select class="custom-select" id="inputGroupSelect01">
+                                                                <option selected>Choose...</option>
+                                                                <option value="1">One</option>
+                                                                <option value="2">Two</option>
+                                                                <option value="3">Three</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <button class="btn btn-link" type="button" data-toggle="collapse"
+                                                data-target="#filtres" aria-expanded="false" aria-controls="filtres">
+                                                FILTRES
+                                            </button>
+                                        </div>
+                                        <div id="filtres" class="collapse show" aria-labelledby="filtres">
+                                            <div class="card-body">
+                                                <div class="dotted btn-wrapper">
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-md-12 text-center p-3">
+                                                            <button id="btn-condition" href="#"
+                                                                class="btn btn-outline-secondary">
+                                                                + Condition
+                                                            </button>
+                                                            <button href="#" class="btn btn-outline-secondary">
+                                                                + Sous groups
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="filter-wrapper" style="display: none">
+                                                    <div class="filter-parent">
+                                                        <label class="switch" for="checkbox">
+                                                            <input type="checkbox" id="checkbox" />
+                                                            <div class="slider round"></div>
+                                                        </label>
+                                                    </div>
+                                                    <div class="filter-row">
+                                                        <div class="row">
+                                                            <div class="col-md-8">
+                                                                <div class="form-row filter-row-inner">
+                                                                    <div class="col-md-5">
+                                                                        <select class="custom-select" id="critere">
+                                                                            <option selected>Choose...</option>
+                                                                            <option value="1">One</option>
+                                                                            <option value="2">Two</option>
+                                                                            <option value="3">Three</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <select class="custom-select" id="condition">
+                                                                            <option selected>Choose...</option>
+                                                                            <option value="1">One</option>
+                                                                            <option value="2">Two</option>
+                                                                            <option value="3">Three</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <input type="text" class="form-control"
+                                                                            placeholder="Valeur">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4 text-right">
+                                                                <button class="btn btn-icon">
+                                                                    x
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="filter-row">
+                                                        <div class="row">
+                                                            <div class="col-md-8">
+                                                                <div class="form-row filter-row-inner">
+                                                                    <div class="col-md-5">
+                                                                        <select class="custom-select" id="critere">
+                                                                            <option selected>Choose...</option>
+                                                                            <option value="1">One</option>
+                                                                            <option value="2">Two</option>
+                                                                            <option value="3">Three</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <select class="custom-select" id="condition">
+                                                                            <option selected>Choose...</option>
+                                                                            <option value="1">One</option>
+                                                                            <option value="2">Two</option>
+                                                                            <option value="3">Three</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <input type="text" class="form-control"
+                                                                            placeholder="Valeur">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4 text-right">
+                                                                <button class="btn btn-icon">
+                                                                    x
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="filter-row">
+                                                        <div class="row">
+                                                            <div class="col-md-8">
+                                                                <div class="form-row filter-row-inner">
+                                                                    <div class="col-md-5">
+                                                                        <select class="custom-select" id="critere">
+                                                                            <option selected>Choose...</option>
+                                                                            <option value="1">One</option>
+                                                                            <option value="2">Two</option>
+                                                                            <option value="3">Three</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <select class="custom-select" id="condition">
+                                                                            <option selected>Choose...</option>
+                                                                            <option value="1">One</option>
+                                                                            <option value="2">Two</option>
+                                                                            <option value="3">Three</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <input type="text" class="form-control"
+                                                                            placeholder="Valeur">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4 text-right">
+                                                                <button class="btn btn-icon">
+                                                                    x
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <button class="btn btn-link" type="button" data-toggle="collapse"
+                                                data-target="#conditions" aria-expanded="false"
+                                                aria-controls="conditions">
+                                                CONDITIONS
+                                            </button>
+                                        </div>
+                                        <div id="conditions" class="collapse" aria-labelledby="conditions">
+                                            <div class="card-body">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <button class="btn btn-link" type="button" data-toggle="collapse"
+                                                data-target="#actions" aria-expanded="false"
+                                                aria-controls="actions">
+                                                ACTIONS
+                                            </button>
+                                        </div>
+                                        <div id="actions" class="collapse" aria-labelledby="actions">
+                                            <div class="card-body">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/plugins/jquery.connections.js"></script>
+    <script src="vendor/plugins/select2/select2.min.js"></script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>
