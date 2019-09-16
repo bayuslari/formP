@@ -24,6 +24,14 @@
         select2: function() {
             $('select').select2();
         },
+        initSelect2Filter: function(){
+            $('.select-critere').select2();
+            $('.select-condition').select2();
+        },
+        destroySelect2Filter: function(){
+            $('.select-critere').select2("destroy");
+            $('.select-condition').select2("destroy");
+        },
         lineConnector: function() {
             $('.filter-parent').connections({
                 to: '.filter-row',
@@ -31,14 +39,28 @@
             });
         },
         filterHandler: function(){
-            $('#btn-condition').click(function() {
-                $('#filtres .btn-wrapper').fadeOut();
-                $('.filter-wrapper').fadeIn(500);
-                setTimeout(function(){
+            function add_row($wrapper){
+                var section_id = $wrapper.find('.filter-row').length;
+                var $template = jQuery('.template-filter-row');
+                
+                var $row = jQuery($template).clone().removeClass('template-filter-row').attr('data-id', section_id);
+                console.log(section_id);
+                $wrapper.append($row);
+                
                     app.lineConnector();
-                    app.select2();
-                }, 600)
+                    app.initSelect2Filter();
+                    $('.filter-row').connections('update');
+   
+            }
+
+            jQuery('#btn-condition').click(function(){
+                $('.filter-parent').css('display','block');
+                app.destroySelect2Filter();
+                add_row($('#filter-wrapper'));
             });
+
+            
+           
         }
     }
 

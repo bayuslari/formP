@@ -212,7 +212,7 @@
     color: red;
 }
 
-.filter-wrapper {
+#filter-wrapper {
     position: relative;
     padding-left: 150px;
 }
@@ -229,6 +229,20 @@
     border-style: dotted;
     border-color: #007bff;
 }
+
+.template-filter-row {
+    display: none;
+}
+
+.template-filter-row {
+    display: none;
+}
+
+.filter-parent {
+    display: none;
+}
+
+/* End Filters */
 
 /* Switch Toggle */
 
@@ -281,3 +295,5 @@
 .switch .slider.round:before {
     border-radius: 50%;
 }
+
+/* End Switch Toggle */
