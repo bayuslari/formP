@@ -54,7 +54,19 @@
             }
 
             jQuery('#btn-condition').click(function(){
-                $('.filter-parent').css('display','block');
+                if ($('.filter-row').length <= 1){
+
+                    $('.dashed.btn-wrapper').contents().appendTo('#filter-1 .filter-btn-wrapper');
+                    $('.dashed.btn-wrapper').remove();
+                    $('.filter-btn-wrapper').css('display','flex');
+                }
+
+                if ($('.filter-row').length > 1){
+                    $('#filter-wrapper').addClass('filter-wrapper-active');
+                    $('.filter-parent').css('display','block');
+                }
+                
+                
                 app.destroySelect2Filter();
                 add_row($('#filter-wrapper'));
             });
