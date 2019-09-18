@@ -11,6 +11,7 @@
         init: function($) {
             app.select2();
             app.filterHandler();
+            app.datepicker();
         },
 
         onResize: function() {
@@ -69,10 +70,23 @@
                 
                 app.destroySelect2Filter();
                 add_row($('#filter-wrapper'));
+            });  
+        },
+        datepicker: function(){
+            $('#datetimepicker1').datetimepicker({
+                format: 'L'
+            });
+            $('#datetimepicker2').datetimepicker({
+                format: 'L',
+                useCurrent: false
             });
 
-            
-           
+            $("#datetimepicker1").on("change.datetimepicker", function (e) {
+                $('#datetimepicker2').datetimepicker('minDate', e.date);
+            });
+            $("#datetimepicker2").on("change.datetimepicker", function (e) {
+                $('#datetimepicker1').datetimepicker('maxDate', e.date);
+            });
         }
     }
 

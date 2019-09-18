@@ -282,7 +282,18 @@ body {
     font-size: 12px;
     margin-bottom: 5px;
     line-height: 15px;
+}
 
+.input-group.date .input-group-append {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.input-group.date .input-group-text {
+    background: transparent;
+    border: 0;
 }
 /* End Forms */
 

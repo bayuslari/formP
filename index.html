@@ -13,8 +13,8 @@
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="vendor/plugins/select2/select2.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans:300,400,600,700&display=swap"
-        rel="stylesheet">
+    <link href="vendor/plugins/tempus-dominus/tempusdominus-bootstrap-4.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
 
 </head>
@@ -125,22 +125,26 @@
                                                                     </select>
                                                                 </div>
                                                                 <div class="form-group col-md-4">
-                                                                    <label>Date d'activation</label>
-                                                                    <select class="custom-select">
-                                                                        <option selected></option>
-                                                                        <option value="1">One</option>
-                                                                        <option value="2">Two</option>
-                                                                        <option value="3">Three</option>
-                                                                    </select>
+                                                                    <label>Date d'activation</label> 
+                                                                    <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                                                                        <input type="text" class="form-control datetimepicker-input" id="datetimepicker1" data-toggle="datetimepicker" data-target="#datetimepicker1"/>
+                                                                        <div class="input-group-append">
+                                                                            <div class="input-group-text">
+                                                                                <img src="img/calendar.svg" alt="">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                                 <div class="form-group col-md-4">
                                                                     <label>Date de fin d'activation</label>
-                                                                    <select class="custom-select">
-                                                                        <option selected></option>
-                                                                        <option value="1">One</option>
-                                                                        <option value="2">Two</option>
-                                                                        <option value="3">Three</option>
-                                                                    </select>
+                                                                    <div class="input-group date" id="datetimepicker2" data-target-input="nearest">
+                                                                        <input type="text" class="form-control datetimepicker-input" id="datetimepicker2" data-toggle="datetimepicker" data-target="#datetimepicker2"/>
+                                                                        <div class="input-group-append">
+                                                                            <div class="input-group-text">
+                                                                                <img src="img/calendar.svg" alt="">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -211,12 +215,6 @@
                                                             </div>
                                                         </div>
                                                         <div class="filter-btn-wrapper">
-                                                            <!-- <button id="btn-condition" href="#" class="btn btn-outline-secondary">
-                                                                + Condition
-                                                            </button>
-                                                            <button href="#" class="btn btn-outline-secondary">
-                                                                + Sous groups
-                                                            </button> -->
                                                         </div>
                                                     </div>
                                                 </div>
@@ -268,8 +266,11 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="vendor/plugins/moment/moment-with-locales.js"></script>
     <script src="vendor/plugins/jquery.connections.js"></script>
     <script src="vendor/plugins/select2/select2.min.js"></script>
+    <script src="vendor/plugins/tempus-dominus/tempusdominus-bootstrap-4.min.js"></script>
     <script src="main.js"></script>
 
 </body>
