@@ -34,43 +34,46 @@
             $('.select-condition').select2("destroy");
         },
         lineConnector: function() {
-            $('.filter-parent').connections({
+            $('.filter-head').connections({
                 to: '.filter-row',
                 'class': 'related-conn'
             });
+            $('.filter-row').connections('update');
+
         },
         filterHandler: function(){
-            function add_row($wrapper){
-                var section_id = $wrapper.find('.filter-row').length;
-                var $template = jQuery('.template-filter-row');
-                
-                var $row = jQuery($template).clone().removeClass('template-filter-row').attr('data-id', section_id);
-                console.log(section_id);
-                $wrapper.append($row);
-                
-                    app.lineConnector();
-                    app.initSelect2Filter();
-                    $('.filter-row').connections('update');
-   
-            }
+            var $template_table = $(".template-wrapper");
+            var $template_row = $(".template-row");
+            var $template_head = $(".template-head");
 
-            jQuery('#btn-condition').click(function(){
-                if ($('.filter-row').length <= 1){
-
-                    $('.dashed.btn-wrapper').contents().appendTo('#filter-1 .filter-btn-wrapper');
-                    $('.dashed.btn-wrapper').remove();
-                    $('.filter-btn-wrapper').css('display','flex');
-                }
-
-                if ($('.filter-row').length > 1){
-                    $('#filter-wrapper').addClass('filter-wrapper-active');
-                    $('.filter-parent').css('display','block');
-                }
-                
-                
+            $(".btn-condition").click(function() {
                 app.destroySelect2Filter();
-                add_row($('#filter-wrapper'));
-            });  
+                var $row = jQuery($template_row).clone(true).removeClass("template-row");
+                var $head = jQuery($template_head).clone(true).removeClass("template-head");
+                $(this).closest('.filter-wrapper').addClass('show-row');
+
+                if ($('#filters .filter-row').length < 2){
+                    // Add row when click "+ Add condition" first time
+                    $row.insertAfter($('.dashed + .filter-inner > .filter-row'));
+                    $('.dashed.btn-wrapper').remove();
+                } else {
+                    $row.insertAfter($(this).closest(".filter-row"));
+                }
+
+                $(this).closest('.filter-inner').prepend($head).addClass('filter-inner-active');
+                app.initSelect2Filter();
+            });
+
+            $(".btn-sous").click(function() {
+                app.destroySelect2Filter();
+                var $table = jQuery($template_table)
+                    .clone(true)
+                    .removeClass("template-wrapper");
+                $table.insertAfter($(this).closest(".filter-row"));
+                app.initSelect2Filter();
+            });
+
+            
         },
         datepicker: function(){
             $('#datetimepicker1').datetimepicker({
