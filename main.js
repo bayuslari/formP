@@ -35,10 +35,10 @@
         },
         lineConnector: function() {
             $('.filter-head').connections({
-                to: '.filter-row',
+                to: '.filter-inner > .filter-row',
                 'class': 'related-conn'
             });
-            $('.filter-row').connections('update');
+            $('.filter-head').connections('update');
 
         },
         filterHandler: function(){
@@ -50,27 +50,45 @@
                 app.destroySelect2Filter();
                 var $row = jQuery($template_row).clone(true).removeClass("template-row");
                 var $head = jQuery($template_head).clone(true).removeClass("template-head");
+               
                 $(this).closest('.filter-wrapper').addClass('show-row');
 
-                if ($('#filters .filter-row').length < 2){
+                if (!$('#filters .filter-row').length){
                     // Add row when click "+ Add condition" first time
-                    $row.insertAfter($('.dashed + .filter-inner > .filter-row'));
+                    $('.dashed + .filter-inner').prepend($row);
                     $('.dashed.btn-wrapper').remove();
                 } else {
                     $row.insertAfter($(this).closest(".filter-row"));
                 }
 
                 $(this).closest('.filter-inner').prepend($head).addClass('filter-inner-active');
+                
+                // if(!$('#filters > .filter-wrapper > .filter-inner > .filter-head').length){
+                //     $(this).closest('.filter-inner').prepend($head).addClass('filter-inner-active');
+                // }
+
+                // if(!$('.sous-wrapper > .filter-inner > .filter-head').length){
+                //     $(this).closest('.filter-inner').prepend($head).addClass('filter-inner-active');
+                // }
+
                 app.initSelect2Filter();
+                
+                    app.lineConnector();
+                
             });
 
             $(".btn-sous").click(function() {
                 app.destroySelect2Filter();
+                var $head = jQuery($template_head).first().clone(true).removeClass("template-head");
+                
                 var $table = jQuery($template_table)
                     .clone(true)
-                    .removeClass("template-wrapper");
+                    .removeClass("template-wrapper").addClass('sous-wrapper');
                 $table.insertAfter($(this).closest(".filter-row"));
+                
                 app.initSelect2Filter();
+                  
+                    app.lineConnector();
             });
 
             
