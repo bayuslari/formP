@@ -283,7 +283,7 @@ body {
 }
 
 @media (min-width: 1025px){
-    .select-critere + .select2,
+    .select-choisir + .select2,
     .input-valeur {
         width: 200px !important;
     }
@@ -356,6 +356,11 @@ body {
     left: -5px;
     transform: translateY(-50%);
     height: 38px;
+    display: none;
+}
+
+.filter-inner-active > .filter-head {
+    display: block;
 }
 
 .related-conn {
@@ -396,18 +401,30 @@ body {
     position: relative;
 }
 
-.show-row {
-    padding-bottom: 60px !important;
-}
 
 .template-wrapper,
 .template-row,
-.template-head {
+.template-head, .template-btn-sous {
     display: none;
 }
 
-#filters .filter-wrapper {
-    padding-bottom: 60px !important;
+.filter-wrapper.sous-wrapper + .filter-wrapper.sous-wrapper {
+    margin: 20px 0;
+}
+
+
+#filters .show-row {
+    padding-bottom: 75px !important;
+}
+
+#filters .filter-wrapper.sous-wrapper {
+    padding-bottom: 50px;
+}
+
+.filter-btn-after-sous {
+    position: absolute;
+    bottom: -50px;
+    right: 5px;
 }
 
 /* End Filters */
@@ -422,11 +439,11 @@ body {
     margin-bottom: 0;
 }
 
-.switch input {
+.switch > input {
     display: none;
 }
 
-.switch .slider {
+.switch > .slider {
     background-color: #f4f4f4;
     bottom: 0;
     cursor: pointer;
@@ -437,7 +454,7 @@ body {
     transition: .4s;
 }
 
-.switch .slider:before {
+.switch > .slider:before {
     background-color: #fff;
     bottom: 2px;
     content: 'ET';
@@ -456,7 +473,7 @@ body {
     justify-content: center;
 }
 
-.switch .slider:after {
+.switch > .slider:after {
     bottom: 2px;
     content: 'OU';
     height: 34px;
@@ -474,25 +491,25 @@ body {
     justify-content: center;
 }
 
-.switch input:checked+.slider {
+.switch > input:checked+.slider {
     background-color: #66bb6a;
 }
 
-.switch input:checked+.slider:before {
+.switch > input:checked+.slider:before {
     transform: translateX(36px);
     content: 'OU';
 }
 
-.switch input:checked+.slider:after {
+.switch > input:checked+.slider:after {
     content: 'ET';
     left: 2px;
 }
 
-.switch .slider.round {
+.switch > .slider.round {
     border-radius: 32px;
 }
 
-.switch .slider.round:before {
+.switch > .slider.round:before {
     border-radius: 50%;
 }
 
