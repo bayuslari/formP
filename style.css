@@ -2,6 +2,7 @@ body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
     background-color: #f1f1f1;
+    position: relative;
 }
 
 .content {
@@ -230,6 +231,15 @@ body {
     padding: 19px 21.5px 23px;
 }
 
+.collapse:not(.show) {
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+
+.accordion-hide .related-conn {
+    display: none !important;
+}
 /* End Accordion */
 
 .bg-gray {
