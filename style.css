@@ -286,10 +286,12 @@ body {
     .select-choisir + .select2,
     .input-valeur {
         width: 200px !important;
+        margin: 5px 0;
     }
     
     .select-condition + .select2 {
         width: 105px !important;
+        margin: 5px 0;
     }
 }
 
@@ -326,7 +328,7 @@ body {
 /* Filters */
 .filter-item {
     background: #f4f4f4;
-    padding: 14.9px 12.5px 14.1px;
+    padding: 4.9px 12.5px 4.1px;
     margin: 20px 0;
     border: 2px solid #E8E8EA;
 }
@@ -412,12 +414,11 @@ body {
     margin: 20px 0;
 }
 
-
-#filters .show-row {
-    padding-bottom: 75px !important;
+#filters .filter-wrapper.show-row {
+    padding-bottom: 70px;
 }
 
-#filters .filter-wrapper.sous-wrapper {
+#filters .sous-wrapper {
     padding-bottom: 50px;
 }
 
@@ -425,6 +426,14 @@ body {
     position: absolute;
     bottom: -50px;
     right: 5px;
+}
+
+#filters .sous-wrapper.sous-parent {
+    padding-bottom: 70px;
+}
+
+#filters .show-row > .filter-inner > .filter-btn-after-sous {
+    bottom: -50px;
 }
 
 /* End Filters */
