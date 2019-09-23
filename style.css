@@ -292,11 +292,32 @@ body {
     color: #838C93;
 }
 
-.remove-wrapper {
+.btn-remove-wrapper {
     position: absolute;
     top: 11.9px;
     right: 0px;
 }
+
+.bootstrap-datetimepicker-widget table td,
+.bootstrap-datetimepicker-widget table tr,
+.bootstrap-datetimepicker-widget table th {
+    color: #838C93;
+}
+.bootstrap-datetimepicker-widget table td.disabled {
+    opacity: 0.5;
+}
+
+.bootstrap-datetimepicker-widget table th.disabled,
+.bootstrap-datetimepicker-widget table th.disabled:hover,
+.bootstrap-datetimepicker-widget table td.cw,
+.bootstrap-datetimepicker-widget table td.old,
+.bootstrap-datetimepicker-widget table td.new,
+.bootstrap-datetimepicker-widget table td span.old,
+.bootstrap-datetimepicker-widget table td span.disabled,
+.bootstrap-datetimepicker-widget table td span.disabled:hover {
+    color: #e8e8ea;
+}
+
 
 @media (min-width: 1025px){
     .select-choisir + .select2,
@@ -308,6 +329,11 @@ body {
     .select-condition + .select2 {
         width: 100px !important;
         margin: 5px 0;
+    }
+
+    .filter-wrapper .filter-wrapper .filter-wrapper .filter-wrapper .select-choisir + .select2,
+    .filter-wrapper .filter-wrapper .filter-wrapper .filter-wrapper .input-valeur {
+        width: 100px !important;
     }
 }
 
