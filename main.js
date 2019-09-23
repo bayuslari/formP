@@ -29,11 +29,11 @@
             $('select').select2();
         },
         initSelect2Filter: function () {
-            $('.select-critere').select2();
+            $('.select-choisir').select2();
             $('.select-condition').select2();
         },
         destroySelect2Filter: function () {
-            $('.select-critere').select2("destroy");
+            $('.select-choisir').select2("destroy");
             $('.select-condition').select2("destroy");
         },
         lineConnector: function ($this) {
@@ -62,99 +62,103 @@
         filterHandler: function () {
             var $template_table = $(".template-wrapper");
             var $template_row = $(".template-row");
-            var $template_btn_sous = $(".template-btn-sous");
+            var $template_initial = $(".template-initial");
 
-            $(".filter-btn-wrapper > .btn-condition, .btn-wrapper > .btn-condition").click(function () {
+
+
+            $(".filter-btn-wrapper > .btn-condition, .dashed > .btn-condition").click(function () {
                 app.destroySelect2Filter();
-                var $row = jQuery($template_row).clone(true).removeClass("template-row");
 
-                if (!$('#filters .filter-row').length) {
+                var $row = jQuery($template_row).clone(true).removeClass("template-row");
+                var $dataId = parseInt($(this).parents('.filter-wrapper').attr('data-id'));
+
+                if ($('.btn-wrapper + .filter-inner > div').length < 3) {
                     // Add row when click "+ Add condition" first time
-                    $(this).closest('.filter-wrapper').addClass('show-row');
-                    $('.dashed + .filter-inner').append($row);
-                    $('.dashed.btn-wrapper').remove();
+                    $(this).closest('.filter-wrapper').addClass('first-wrapper');
+                    $('.dashed + .filter-inner > .filter-head').after($row);
+                    console.log('filter row ga ada');
                 } else {
-                    $row.insertAfter($(this).closest(".filter-row"));
+                    $(this).closest('.filter-inner > .filter-btn-wrapper').before($row);
+                    console.log('filter row ditambah');
                 }
 
                 // Add class .filter-inner-active
-                var $dataId = parseInt($(this).closest('.filter-wrapper').attr('data-id'));
                 var childCount = $('.filter-wrapper[data-id="' + $dataId + '"] > .filter-inner > div').length;
-                if (childCount === 3) {
+                if (childCount === 4) {
                     $(this).closest('.filter-inner').addClass('filter-inner-active');
                 }
-
+                
                 app.initSelect2Filter();
                 app.lineConnector($(this));
             });
 
-            $(".filter-btn-wrapper > .btn-sous, .btn-wrapper > .btn-sous").click(function () {
+            $(".filter-btn-wrapper > .btn-sous, .dashed > .btn-sous").click(function () {
                 app.destroySelect2Filter();
                 var $dataId = parseInt($(this).closest('.filter-wrapper').attr('data-id'));
                 var $wrapperLength = $('.filter-wrapper').length - 1;
 
                 var $table = jQuery($template_table)
                     .clone(true)
-                    .removeClass("template-wrapper").children().addClass('sous-wrapper').attr('data-id', $wrapperLength++);
-                $table.insertAfter($(this).closest(".filter-row"));
+                    .removeClass("template-wrapper").addClass('sous-wrapper').attr('data-id', $wrapperLength++);
+                $(this).closest('.filter-inner > .filter-btn-wrapper').before($table);
 
+                if ($('.btn-wrapper + .filter-inner > div').length < 3) {
+                    // Add row when click "+ Add sous" first time
+                    $(this).closest('.filter-wrapper').addClass('first-wrapper');
+                    $('.dashed + .filter-inner > .filter-head').after($table);
+                    console.log('filter sous row ga ada');
+                } else {
+                    $(this).closest('.filter-inner > .filter-btn-wrapper').before($table);
+                    console.log('filter sous row ditambah');
+                }
 
+                // Add class .filter-inner-active
                 var childCount = $('.filter-wrapper[data-id="' + $dataId + '"] > .filter-inner > div').length;
-                if (childCount === 3) {
+                
+                if (childCount === 4) {
                     $(this).closest('.filter-inner').addClass('filter-inner-active');
                 }
 
-                // If btn sous clicked, than add btn after this
-                var $btnAfterSous = jQuery($template_btn_sous)
-                    .clone(true)
-                    .removeClass("filter-btn-wrapper template-btn-sous");
-                if (!$('.filter-wrapper[data-id="' + $dataId + '"] > .filter-inner > .filter-btn-after-sous').length) {
-                    $(this).closest('.filter-inner').append($btnAfterSous);
+                app.initSelect2Filter();
+                app.lineConnector($(this));
+            });
+
+            $(".btn-remove").click(function(){
+
+                var $tr = $(this).closest('.filter-row');
+                var $table = $(this).closest('.first-wrapper');
+                var $tableSous = $(this).closest('.sous-wrapper > .filter-inner');
+                var $tableFirst = $(this).closest('.first-wrapper > .filter-inner');
+
+                if ($tableSous.children().length <= 3){
+                    $tableSous.closest('.sous-wrapper').remove();
+                    $(this).closest('.sous-wrapper > .filter-inner').removeClass('filter-inner-active');
+                } else if ($tableSous.children().length <= 4){
+                    // $tableSous.removeClass('filter-inner-active');
+                    $(this).closest('.sous-wrapper > .filter-inner').removeClass('filter-inner-active');
+                    console.log('sous',$tableSous.length);
+                    $tr.remove();
+                } else {
+                      $tr.remove();
+                }
+                
+
+                if ($tableFirst.children().length <= 3){
+                    $table.removeClass('first-wrapper');
+                    $(this).closest('.first-wrapper > .filter-inner').removeClass('filter-inner-active');
+                    $tr.remove();
+                } else if ($tableFirst.children().length <= 4){
+                    $(this).closest('.first-wrapper > .filter-inner').removeClass('filter-inner-active');
+                    $tr.remove();
+                } else if ($tableFirst.children().length > 4){
+                    $tr.remove();
                 }
 
-                $(this).closest('.sous-wrapper').addClass('sous-parent');
-
-                app.initSelect2Filter();
-                app.lineConnector($(this));
-            });
-
-            // Btn condition after sous
-            $(".filter-btn-after-sous > .btn-condition").click(function () {
-                app.destroySelect2Filter();
-                var $row = jQuery($template_row).clone(true).removeClass("template-row");
-
-                $row.insertBefore($(this).parent());
-                app.initSelect2Filter();
-
-                $(this).parent().addClass('d-none');
-                app.lineConnector($(this));
-                setTimeout(() => {
-                    $(this).parent().remove();
-                }, 200);
+                app.updateLineConnection();
             });
 
 
-            $(".filter-btn-after-sous > .btn-sous").click(function () {
-                app.destroySelect2Filter();
-
-                var $wrapperLength = $('.filter-wrapper').length - 1;
-                var $table = jQuery($template_table)
-                    .clone(true)
-                    .removeClass("template-wrapper").children().addClass('sous-wrapper').attr('data-id', $wrapperLength++);
-                $table.insertBefore($(this).parent());
-
-                var $dataId = parseInt($(this).closest('.filter-wrapper').attr('data-id'));
-                var childCount = $('.filter-wrapper[data-id="' + $dataId + '"] > .filter-inner > div').length;
-                if (childCount === 3) {
-                    $(this).closest('.filter-inner').addClass('filter-inner-active');
-                }
-
-                $(this).closest('.sous-wrapper').addClass('sous-parent');
-
-                app.initSelect2Filter();
-                app.lineConnector($(this));
-
-            });
+            
         },
         datepicker: function () {
             $('#datetimepicker1').datetimepicker({

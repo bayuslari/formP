@@ -228,7 +228,7 @@ body {
 
 #filters .card-body {
     border: 2px solid #E8E8EA;
-    padding: 19px 21.5px 23px;
+    padding: 19px 20px 23px;
 }
 
 .collapse:not(.show) {
@@ -292,15 +292,21 @@ body {
     color: #838C93;
 }
 
+.remove-wrapper {
+    position: absolute;
+    top: 11.9px;
+    right: 0px;
+}
+
 @media (min-width: 1025px){
     .select-choisir + .select2,
     .input-valeur {
-        width: 200px !important;
+        width: 190px !important;
         margin: 5px 0;
     }
     
     .select-condition + .select2 {
-        width: 105px !important;
+        width: 100px !important;
         margin: 5px 0;
     }
 }
@@ -339,7 +345,7 @@ body {
 .filter-item {
     background: #f4f4f4;
     padding: 4.9px 12.5px 4.1px;
-    margin: 20px 0;
+    margin: 0 0 20px;
     border: 2px solid #E8E8EA;
 }
 
@@ -352,10 +358,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.filter-inner {
-    position: relative;
 }
 
 .filter-inner-active {
@@ -387,21 +389,37 @@ body {
 }
 
 .filter-btn-wrapper {
-    display: flex;
-    margin-top: 18.5px;
+    display: none;
+    /* margin-top: 18.5px; */
     justify-content: flex-end;
+
+}
+
+.first-wrapper .filter-btn-wrapper {
+    display: flex;
     position: absolute;
-    top: 20px;
-    right: 60px;
+    bottom: -50px;
+    right: 0;
+}
+
+.first-wrapper {
+    padding-bottom: 50px !important;
+}
+
+.sous-wrapper {
+    padding-bottom: 50px !important;
+}
+
+.first-wrapper > .btn-wrapper {
+    display: none;
+}
+
+.filter-inner {
+    position: relative;
 }
 
 .filter-row {
     position: relative;
-}
-
-
-.filter-row:hover .filter-btn-wrapper {
-    display: flex
 }
 
 .filter-row:last-child .filter-btn-wrapper {
@@ -413,37 +431,14 @@ body {
     position: relative;
 }
 
-
 .template-wrapper,
 .template-row,
-.template-head, .template-btn-sous {
+.template-head, .template-btn-sous, .template-initial {
     display: none;
 }
 
-.filter-wrapper.sous-wrapper + .filter-wrapper.sous-wrapper {
-    margin: 20px 0;
-}
-
-#filters .filter-wrapper.show-row {
-    padding-bottom: 70px;
-}
-
-#filters .sous-wrapper {
-    padding-bottom: 50px;
-}
-
-.filter-btn-after-sous {
-    position: absolute;
-    bottom: -50px;
-    right: 5px;
-}
-
-#filters .sous-wrapper.sous-parent {
-    padding-bottom: 70px;
-}
-
-#filters .show-row > .filter-inner > .filter-btn-after-sous {
-    bottom: -50px;
+.filter-wrapper.card-body.sous-wrapper {
+    margin-bottom: 20px;
 }
 
 /* End Filters */
@@ -511,7 +506,7 @@ body {
 }
 
 .switch > input:checked+.slider {
-    background-color: #66bb6a;
+    background-color: #f4f4f4;
 }
 
 .switch > input:checked+.slider:before {
