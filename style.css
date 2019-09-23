@@ -292,11 +292,11 @@ body {
     color: #838C93;
 }
 
-.btn-remove-wrapper {
+/* .btn-remove-wrapper {
     position: absolute;
     top: 11.9px;
     right: 0px;
-}
+} */
 
 .bootstrap-datetimepicker-widget table td,
 .bootstrap-datetimepicker-widget table tr,
