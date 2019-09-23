@@ -76,10 +76,8 @@
                     // Add row when click "+ Add condition" first time
                     $(this).closest('.filter-wrapper').addClass('first-wrapper');
                     $('.dashed + .filter-inner > .filter-head').after($row);
-                    console.log('filter row ga ada');
                 } else {
                     $(this).closest('.filter-inner > .filter-btn-wrapper').before($row);
-                    console.log('filter row ditambah');
                 }
 
                 // Add class .filter-inner-active
@@ -106,10 +104,8 @@
                     // Add row when click "+ Add sous" first time
                     $(this).closest('.filter-wrapper').addClass('first-wrapper');
                     $('.dashed + .filter-inner > .filter-head').after($table);
-                    console.log('filter sous row ga ada');
                 } else {
                     $(this).closest('.filter-inner > .filter-btn-wrapper').before($table);
-                    console.log('filter sous row ditambah');
                 }
 
                 // Add class .filter-inner-active
@@ -136,7 +132,6 @@
                 } else if ($tableSous.children().length <= 4){
                     // $tableSous.removeClass('filter-inner-active');
                     $(this).closest('.sous-wrapper > .filter-inner').removeClass('filter-inner-active');
-                    console.log('sous',$tableSous.length);
                     $tr.remove();
                 } else {
                       $tr.remove();
