@@ -64,8 +64,6 @@
             var $template_row = $(".template-row");
             var $template_initial = $(".template-initial");
 
-
-
             $(".filter-btn-wrapper > .btn-condition, .dashed > .btn-condition").click(function () {
                 app.destroySelect2Filter();
 
