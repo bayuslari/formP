@@ -767,4 +767,9 @@ table.dataTable thead .sorting_desc_disabled:after {
 .close {
     opacity: 1;
 }
+
+.modal-body {
+    padding: 31px 29px;
+    background: #F4F4F4;
+}
 /* End Modal Custom */

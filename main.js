@@ -280,7 +280,7 @@
       };
 
       $(document).ready(function() {
-        var table = $("#table-justificatives").DataTable({
+        var table = $(".table-datatable").DataTable({
           columnDefs: [
             {
               targets: [0],
