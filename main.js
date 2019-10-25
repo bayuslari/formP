@@ -280,12 +280,16 @@
       };
 
       $(document).ready(function() {
-        var table = $(".datatable-base").DataTable({
+        var table = $(".datatable-checkbox").DataTable({
           columnDefs: [
             {
               targets: [0],
               orderDataType: "dom-checkbox"
             },
+            {
+              targets: [2],
+              orderable: false
+            }
           ],
           paging: false,
           bFilter: true,
@@ -303,7 +307,7 @@
             {
               targets: [2],
               orderDataType: "dom-checkbox"
-            },
+            }
           ],
           paging: false,
           bFilter: true,
@@ -311,41 +315,67 @@
           dom: "t"
         });
 
+        var tableStd = $(".datatable-std").DataTable({
+          paging: false,
+          bFilter: true,
+          searching: false,
+          sorting: [],
+          dom: "t"
+        });
+
+
         $(":checkbox").on("change", function(e) {
           var row = $(this).closest("tr");
           table.row(row).invalidate("dom");
           tableSelectAll.row(row).invalidate("dom");
         });
 
-        $('.dataTable').on("click", ".btn-remove", function(){
-          table.row($(this).parents('tr')).remove().draw(false);
-          tableSelectAll.row($(this).parents('tr')).remove().draw(false);
+        $(".dataTable").on("click", ".btn-remove", function() {
+          table
+            .row($(this).parents("tr"))
+            .remove()
+            .draw(false);
+          tableSelectAll
+            .row($(this).parents("tr"))
+            .remove()
+            .draw(false);
         });
 
         let $checkboxItem = $(".item-selectAll input[type='checkbox']");
-        let $checkboxObl = $('.datatable-selectAll .col-checkbox > label')
-        $checkboxObl.addClass('no-visible');
+        let $checkboxObl = $(".datatable-selectAll .col-checkbox > label");
+        $checkboxObl.addClass("no-visible");
 
-        const checkObligatoire = (target) => {
-          target.is(':checked') 
-          ? target.closest('tr').find('.col-checkbox > label').removeClass('no-visible')
-          : target.closest('tr').find('.col-checkbox > label').addClass('no-visible')
-        }
+        const checkObligatoire = target => {
+          target.is(":checked")
+            ? target
+                .closest("tr")
+                .find(".col-checkbox > label")
+                .removeClass("no-visible")
+            : target
+                .closest("tr")
+                .find(".col-checkbox > label")
+                .addClass("no-visible");
+        };
 
         $checkboxItem.on("change", function(e) {
           checkObligatoire($(this));
         });
 
-
-        $("#customCheckAll").on( "click", function(e) {
-          if ($(this).is( ":checked" )) {
-            $(this).closest('table').find('.item-selectAll input[type="checkbox"]').prop('checked', true);
+        $("#customCheckAll").on("click", function(e) {
+          if ($(this).is(":checked")) {
+            $(this)
+              .closest("table")
+              .find('.item-selectAll input[type="checkbox"]')
+              .prop("checked", true);
             checkObligatoire($checkboxItem);
           } else {
-            $(this).closest('table').find('.item-selectAll input[type="checkbox"]').prop('checked', false);
+            $(this)
+              .closest("table")
+              .find('.item-selectAll input[type="checkbox"]')
+              .prop("checked", false);
             checkObligatoire($checkboxItem);
           }
-      });
+        });
       });
     }
   };
