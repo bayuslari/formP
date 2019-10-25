@@ -361,7 +361,7 @@
                                                                         </div>
 
                                                                         <textarea class="form-control" maxlength="250"
-                                                                            rows="8"></textarea>
+                                                                            rows="5"></textarea>
                                                                     </div>
                                                                 </form>
                                                             </div>
@@ -546,7 +546,7 @@
                                                                                                 </div>
                         
                                                                                                 <textarea class="form-control" maxlength="250"
-                                                                                                    rows="8"></textarea>
+                                                                                                    rows="5"></textarea>
                                                                                             </div>
                                                                                             <div class="d-flex justify-content-end">
                                                                                                 <button type="submit" class="btn btn-primary btn-md">Ajouter</button>
@@ -640,14 +640,15 @@
                                                                                 </button>
                                                                             </div>
                                                                             <div class="modal-body">
-                                                                                <label class="label-std">Date de création : <span class="text-primary font-weight-bold">12/10/2019</span></label>
+                                                                                <label class="label-std mb-4">Date de création : <span class="text-primary font-weight-bold">12/10/2019</span></label>
                                                                                 <div class="card champs">
                                                                                     <div class="row no-gutters">
-                                                                                        <div class="col-md-6">
-                                                                                            <div class="card-header champs-reconnus">
+                                                                                        <div class="col-md-6 card">
+                                                                                            <div class="card-header header-reconnus">
+                                                                                                <img src="img/circle-check.svg" alt="">
                                                                                                 Champs reconnus (5)
                                                                                             </div>
-                                                                                            <div class="card-body">
+                                                                                            <div class="card-body body-reconnus">
                                                                                                 <ul class="list-unstyled">
                                                                                                     <li>NomSouscripteur</li>
                                                                                                     <li>PrenomSouscripteur</li>
@@ -657,26 +658,261 @@
                                                                                                 </ul>
                                                                                             </div>
                                                                                         </div>
-                                                                                        <div class="col-md-6">
-                                                                                            <div class="card-header">
-                                                                                                Champs reconnus (5)
+                                                                                        <div class="col-md-6 card">
+                                                                                            <div class="card-header header-inconnus">
+                                                                                                <img src="img/circle-close.svg" alt="">
+                                                                                                Champs inconnus (2)
                                                                                             </div>
-                                                                                            <div class="card-body">
+                                                                                            <div class="card-body body-inconnus">
                                                                                                 <ul class="list-unstyled">
-                                                                                                    <li>NomSouscripteur</li>
-                                                                                                    <li>PrenomSouscripteur</li>
-                                                                                                    <li>DateNaissance</li>
-                                                                                                    <li>Adresse</li>
-                                                                                                    <li>CodePostal</li>
+                                                                                                    <li>ResidenceFiscale</li>
+                                                                                                    <li>IDTechnique</li>
                                                                                                 </ul>
                                                                                             </div>
                                                                                         </div>
-                                                                                    </div>                                                                                    
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="d-flex justify-content-end">
+                                                                                        <button type="button" class="btn btn-primary">Supprimer ce fichier</button>                                                                                    
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
+                                                                <!-- End Modal -->
+                                                                <!-- Modal -->
+                                                                <div class="modal fade" id="modal-ajouter-document" tabindex="-1" role="dialog" aria-hidden="true">
+                                                                    <div class="modal-dialog modal-lg" role="document">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                            <h5 class="modal-title">Ajout de documents contractuels</h5>
+                                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                <img src="img/close.svg"/>
+                                                                            </button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                
+                                                                                <!-- Tabs -->
+                                                                                <ul class="nav nav-tabs-grey" role="tablist">
+                                                                                    <li class="nav-item">
+                                                                                        <a class="nav-link active" id="documents-existants-tab"
+                                                                                            data-toggle="tab" href="#documents-existants" role="tab"
+                                                                                            aria-selected="true">Documents existants</a>
+                                                                                    </li>
+                                                                                    <li class="nav-item">
+                                                                                        <a class="nav-link" id="nouveau-document-tab"
+                                                                                            data-toggle="tab" href="#nouveau-document" role="tab"
+                                                                                            aria-selected="true">Nouveau document</a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                                <div class="tab-content tab-grey-content">
+                                                                                    <div class="tab-pane fade show active" id="documents-existants"
+                                                                                        role="tabpanel">
+                                                                                        <form>
+                                                                                            <div class="form-group form-search">
+                                                                                                <input type="text" class="form-control" placeholder="Rechercher">
+                                                                                            </div>
+                                                                                            <div class="form-group">
+                                                                                                <table class="datatable-style datatable-selectAll table-scroller" cellspacing="20" width="100%">
+                                                                                                    <thead>
+                                                                                                        <tr>
+                                                                                                            <th class="custom-selectAll"><div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" id="customCheckAll2">
+                                                                                                                    <label class="custom-control-label" for="customCheckAll2"></label>
+                                                                                                                </div>
+                                                                                                            </th>
+                                                                                                            <th>Nom</th>
+                                                                                                            <th>Champs connus</th>
+                                                                                                            <th>Champs inconnus</th>
+                                                                                                            <th>Date d'insertion</th>
+                                                                                                        </tr>
+                                                                                                    </thead>
+                                                                                                    <tbody>
+                                                                                                        <tr>
+                                                                                                            <td>
+                                                                                                                <div class="custom-control custom-checkbox item-selectAll">
+                                                                                                                    <input type="checkbox" class="custom-control-input" id="customCheck6">
+                                                                                                                    <label class="custom-control-label" for="customCheck6"></label>
+                                                                                                                </div>
+                                                                                                            </td>
+                                                                                                            <td>Lorem ipsum sitamet</td>
+                                                                                                            <td>12</td>
+                                                                                                            <td>0</td>
+                                                                                                            <td>12/10/2019</td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                            <td>
+                                                                                                                <div class="custom-control custom-checkbox item-selectAll">
+                                                                                                                    <input type="checkbox" class="custom-control-input" id="customCheck7">
+                                                                                                                    <label class="custom-control-label" for="customCheck7"></label>
+                                                                                                                </div>
+                                                                                                            </td>
+                                                                                                            <td>Dolorem idnam</td>
+                                                                                                            <td>12</td>
+                                                                                                            <td>0</td>
+                                                                                                            <td>12/10/2019</td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                            <td>
+                                                                                                                <div class="custom-control custom-checkbox item-selectAll">
+                                                                                                                    <input type="checkbox" class="custom-control-input" id="customCheck8">
+                                                                                                                    <label class="custom-control-label" for="customCheck8"></label>
+                                                                                                                </div>
+                                                                                                            </td>
+                                                                                                            <td>Corem ipsum sitamet</td>
+                                                                                                            <td>12</td>
+                                                                                                            <td>0</td>
+                                                                                                            <td>12/10/2019</td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                            <td>
+                                                                                                                <div class="custom-control custom-checkbox item-selectAll">
+                                                                                                                    <input type="checkbox" class="custom-control-input" id="customCheck9">
+                                                                                                                    <label class="custom-control-label" for="customCheck9"></label>
+                                                                                                                </div>
+                                                                                                            </td>
+                                                                                                            <td>Corem ipsum sitamet</td>
+                                                                                                            <td>12</td>
+                                                                                                            <td>0</td>
+                                                                                                            <td>12/10/2019</td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                            <td>
+                                                                                                                <div class="custom-control custom-checkbox item-selectAll">
+                                                                                                                    <input type="checkbox" class="custom-control-input" id="customCheck10">
+                                                                                                                    <label class="custom-control-label" for="customCheck10"></label>
+                                                                                                                </div>
+                                                                                                            </td>
+                                                                                                            <td>Corem ipsum sitamet</td>
+                                                                                                            <td>12</td>
+                                                                                                            <td>0</td>
+                                                                                                            <td>12/10/2019</td>
+                                                                                                        </tr>
+                                                                                                    </tbody>
+                                                                                                </table>  
+                                                                                            </div>
+                                                                                            <div class="d-flex justify-content-end">
+                                                                                                <button type="submit" class="btn btn-primary btn-md">Ajouter la sélection</button>
+                                                                                            </div>
+                                                                                        </form>
+                                                                                    </div>
+                                                                                    <div class="tab-pane fade" id="nouveau-document"
+                                                                                        role="tabpanel">
+                                                                                        
+                                                                                        <form>
+                                                                                            <div class="form-group">
+                                                                                                <label>Nom du document</label>
+                                                                                                <input type="text" class="form-control" placeholder="">
+                                                                                            </div>
+                                                                                            <div class="form-group">
+                                                                                                <label>Upload du document</label>
+                                                                                                <div class="upload-doc">
+                                                                                                    <div class="dashed">
+                                                                                                        <div class="custom-file" id="custom-upload">
+                                                                                                            <input type="file" class="custom-file-input" id="customFile">
+                                                                                                            <label class="custom-file-label" for="customFile">Drag'n drop ou cliquer sur l'icone ci-dessous pour parcourir</label>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div id="example-upload">
+                                                                                                    <div class="input-group">
+                                                                                                        <input type="text" class="form-control form-control-lg" placeholder="Lorem Ispum sitamet">
+                                                                                                        <div class="input-group-inside">
+                                                                                                            <button type="submit" class="btn btn-primary btn-md">Annuler ce fichier</button>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="form-group">
+                                                                                                        <div class="champs">                                                                                                
+                                                                                                            <div class="row no-gutters">
+                                                                                                                <div class="col-md-6 card">
+                                                                                                                    <div class="card-header header-reconnus">
+                                                                                                                        <img src="img/circle-check.svg" alt="">
+                                                                                                                        Champs reconnus (5)
+                                                                                                                    </div>
+                                                                                                                    <div class="card-body body-reconnus">
+                                                                                                                        <ul class="list-unstyled">
+                                                                                                                            <li>NomSouscripteur</li>
+                                                                                                                            <li>PrenomSouscripteur</li>
+                                                                                                                            <li>DateNaissance</li>
+                                                                                                                            <li>Adresse</li>
+                                                                                                                            <li>CodePostal</li>
+                                                                                                                        </ul>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                <div class="col-md-6 card">
+                                                                                                                    <div class="card-header header-inconnus">
+                                                                                                                        <img src="img/circle-close.svg" alt="">
+                                                                                                                        Champs inconnus (2)
+                                                                                                                    </div>
+                                                                                                                    <div class="card-body body-inconnus">
+                                                                                                                        <ul class="list-unstyled">
+                                                                                                                            <li>ResidenceFiscale</li>
+                                                                                                                            <li>IDTechnique</li>
+                                                                                                                        </ul>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="form-group">
+                                                                                                <label id="show-example"><a href="#">Show After Upload</a></label>
+                                                                                            </div>
+                                                                                            <div class="row align-items-center">
+                                                                                                <div class="col-md-6">
+                                                                                                    <div class="form-group">
+                                                                                                        <div class="custom-control custom-checkbox">
+                                                                                                            <input type="checkbox" class="custom-control-input" id="Type de">
+                                                                                                            <label class="custom-control-label" for="Type de">Type de justificatif spécifique à un assureur</label>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    
+                                                                                                </div>
+                                                                                                <div class="col-md-6">
+                                                                                                    <div class="form-group">
+                                                                                                        <select class="custom-select w-100" id="Nom-de"
+                                                                                                            data-placeholder="Nom de l'assureur">
+                                                                                                            <option selected></option>
+                                                                                                            <option value="1">One</option>
+                                                                                                            <option value="2">Two</option>
+                                                                                                            <option value="3">Three</option>
+                                                                                                        </select>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            
+                                                                                            <div class="form-group col-checkbox d-flex align-items-center mt-2 mb-4">
+                                                                                                <label class="switch">
+                                                                                                    <input type="checkbox" checked>
+                                                                                                    <div class="slider round"></div>
+                                                                                                </label>
+                                                                                                <label class="ml-2 mb-0">Obligatoire</label>
+                                                                                            </div>
+
+                                                                                            <div class="form-group textarea-counter">
+                                                                                                <div class="textarea-label">
+                                                                                                    <label>Description</label>
+                                                                                                    <label class="label-counter">Caractères restants 
+                                                                                                        <span class="length"></span>/<span class="maxlength"></span></label>
+                                                                                                </div>
+                        
+                                                                                                <textarea class="form-control" maxlength="250"
+                                                                                                    rows="5"></textarea>
+                                                                                            </div>
+                                                                                            <div class="d-flex justify-content-end">
+                                                                                                <button type="submit" class="btn btn-primary btn-md">Ajouter</button>
+                                                                                            </div>
+                                                                                        </form>
+                                                                                            
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- End Tabs -->
+                                                                            
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- End Modal -->
                                                                 <table class="datatable-style datatable-std"
                                                                     cellspacing="20" width="100%">
                                                                     <thead>
@@ -686,7 +922,7 @@
                                                                             <th>Nbr de champs inconnus</th>
                                                                             <th>Date d'insertion</th>
                                                                             <th class="btn-in-wrap">
-                                                                                <button type="button" class="btn btn-primary btn-in-table btn-md">Ajouter un document contractuel</button>
+                                                                                <button type="button" class="btn btn-primary btn-in-table btn-md" data-toggle="modal" data-target="#modal-ajouter-document">Ajouter un document contractuel</button>
                                                                             </th>
                                                                         </tr>
                                                                     </thead>
@@ -697,7 +933,7 @@
                                                                             <td >12</td>
                                                                             <td>0</td>
                                                                             <td>12/10/2019</td>
-                                                                            <td class="btn-icon-wrap" width="220">
+                                                                            <td class="btn-icon-wrap">
                                                                                 <button class="btn btn-icon btn-look" data-toggle="modal" data-target="#modal-look-detail">
                                                                                     <img src="img/eye.svg" alt="">
                                                                                 </button>
@@ -712,7 +948,7 @@
                                                                             <td>5</td>
                                                                             <td>12/10/2019</td>
                                                                             <td class="btn-icon-wrap">
-                                                                                <button class="btn btn-icon btn-look">
+                                                                                <button class="btn btn-icon btn-look" data-toggle="modal" data-target="#modal-look-detail">
                                                                                     <img src="img/eye.svg" alt="">
                                                                                 </button>
                                                                                 <button class="btn btn-icon btn-remove">
@@ -726,7 +962,7 @@
                                                                             <td>0</td>
                                                                             <td>12/10/2019</td>
                                                                             <td class="btn-icon-wrap">
-                                                                                <button class="btn btn-icon btn-look">
+                                                                                <button class="btn btn-icon btn-look" data-toggle="modal" data-target="#modal-look-detail">
                                                                                     <img src="img/eye.svg" alt="">
                                                                                 </button>
                                                                                 <button class="btn btn-icon btn-remove">
@@ -740,7 +976,7 @@
                                                                             <td>5</td>
                                                                             <td>12/10/2019</td>
                                                                             <td class="btn-icon-wrap">
-                                                                                <button class="btn btn-icon btn-look">
+                                                                                <button class="btn btn-icon btn-look" data-toggle="modal" data-target="#modal-look-detail">
                                                                                     <img src="img/eye.svg" alt="">
                                                                                 </button>
                                                                                 <button class="btn btn-icon btn-remove">

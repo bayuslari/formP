@@ -16,6 +16,8 @@
       app.updateLineWhenAccordionChange();
       app.textareaCounter();
       app.dataTable();
+      app.customFileInput();
+      app.showExample();
     },
 
     onResize: function() {
@@ -339,6 +341,10 @@
             .row($(this).parents("tr"))
             .remove()
             .draw(false);
+          tableStd
+            .row($(this).parents("tr"))
+            .remove()
+            .draw(true);
         });
 
         let $checkboxItem = $(".item-selectAll input[type='checkbox']");
@@ -377,6 +383,20 @@
           }
         });
       });
+    },
+    customFileInput: function(){
+      $('input[type="file"]').change(function(e){
+        var fileName = e.target.files[0].name;
+        $('.custom-file-label').html(fileName);
+      });
+    },
+    showExample: function(){
+      $('#show-example').click(function(){
+        $('#example-upload').toggle();
+        $('.upload-doc').toggle();
+        let $target = $(this).find('a');
+        $target.html($target.html() == 'Show After Upload' ? 'Show Before Upload' : 'Show After Upload');
+      })
     }
   };
 
