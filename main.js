@@ -1,6 +1,6 @@
-(function(e) {
+(function (e) {
   e(window.jQuery, window, document);
-})(function($, window, document) {
+})(function ($, window, document) {
   console.log("init");
   var app = {
     // ==============================================================================================
@@ -9,7 +9,7 @@
     // * If you want to disable a function, just commented on function that you need to disable below
     // ==============================================================================================
 
-    init: function($) {
+    init: function ($) {
       app.select2();
       app.filterHandler();
       app.datepicker();
@@ -20,7 +20,7 @@
       app.showExample();
     },
 
-    onResize: function() {
+    onResize: function () {
       // call function here to applied on resize window
     },
 
@@ -28,25 +28,24 @@
     // Your function here
     // * Don't forget to use proper function name to describes your function
     // ======================================================================
-    select2: function() {
+    select2: function () {
       $("select").select2();
     },
-    initSelect2Filter: function() {
+    initSelect2Filter: function () {
       $(".select-choisir").select2();
       $(".select-condition").select2();
     },
-    destroySelect2Filter: function() {
+    destroySelect2Filter: function () {
       $(".select-choisir").select2("destroy");
       $(".select-condition").select2("destroy");
     },
-    lineConnector: function($this) {
+    lineConnector: function ($this) {
       // btn Condition
       var x = $this.closest(".filter-wrapper").attr("data-id");
       $(
         '.filter-wrapper[data-id="' + x + '"] > .filter-inner > .filter-head'
       ).connections({
-        to:
-          '.filter-wrapper[data-id="' + x + '"] > .filter-inner > .filter-row',
+        to: '.filter-wrapper[data-id="' + x + '"] > .filter-inner > .filter-row',
         class: "related-conn"
       });
 
@@ -55,8 +54,7 @@
       $(
         '.filter-wrapper[data-id="' + x + '"] > .filter-inner > .filter-head'
       ).connections({
-        to:
-          '.filter-wrapper[data-id="' +
+        to: '.filter-wrapper[data-id="' +
           x +
           '"] > .filter-inner > .filter-wrapper',
         class: "related-conn"
@@ -70,13 +68,13 @@
       $(".filter-wrapper").connections("update");
       $(".filter-row").connections("update");
     },
-    filterHandler: function() {
+    filterHandler: function () {
       var $template_table = $(".template-wrapper");
       var $template_row = $(".template-row");
       var $template_initial = $(".template-initial");
 
       $(".filter-btn-wrapper > .btn-condition, .dashed > .btn-condition").click(
-        function() {
+        function () {
           app.destroySelect2Filter();
 
           var $row = jQuery($template_row)
@@ -84,8 +82,8 @@
             .removeClass("template-row");
           var $dataId = parseInt(
             $(this)
-              .parents(".filter-wrapper")
-              .attr("data-id")
+            .parents(".filter-wrapper")
+            .attr("data-id")
           );
 
           if ($(".btn-wrapper + .filter-inner > div").length < 3) {
@@ -116,12 +114,12 @@
       );
 
       $(".filter-btn-wrapper > .btn-sous, .dashed > .btn-sous").click(
-        function() {
+        function () {
           app.destroySelect2Filter();
           var $dataId = parseInt(
             $(this)
-              .closest(".filter-wrapper")
-              .attr("data-id")
+            .closest(".filter-wrapper")
+            .attr("data-id")
           );
           var $wrapperLength = $(".filter-wrapper").length - 1;
 
@@ -162,7 +160,7 @@
         }
       );
 
-      $(".btn-remove").click(function() {
+      $(".btn-remove").click(function () {
         var $tr = $(this).closest(".filter-row");
         var $table = $(this).closest(".first-wrapper");
         var $tableSous = $(this).closest(".sous-wrapper > .filter-inner");
@@ -201,7 +199,7 @@
         app.updateLineConnection();
       });
     },
-    datepicker: function() {
+    datepicker: function () {
       $("#datetimepicker1").datetimepicker({
         format: "L",
         previous: "far fa-chevron-left",
@@ -212,28 +210,28 @@
         useCurrent: false
       });
 
-      $("#datetimepicker1").on("change.datetimepicker", function(e) {
+      $("#datetimepicker1").on("change.datetimepicker", function (e) {
         $("#datetimepicker2").datetimepicker("minDate", e.date);
       });
-      $("#datetimepicker2").on("change.datetimepicker", function(e) {
+      $("#datetimepicker2").on("change.datetimepicker", function (e) {
         $("#datetimepicker1").datetimepicker("maxDate", e.date);
       });
     },
-    updateLineWhenAccordionChange: function() {
-      $(".accordion").on("hide.bs.collapse", function() {
+    updateLineWhenAccordionChange: function () {
+      $(".accordion").on("hide.bs.collapse", function () {
         app.updateLineConnection();
         $("html").addClass("accordion-hide");
       });
-      $(".accordion").on("shown.bs.collapse", function() {
+      $(".accordion").on("shown.bs.collapse", function () {
         $("html").removeClass("accordion-hide");
         setTimeout(() => {
           app.updateLineConnection();
         }, 100);
       });
     },
-    textareaCounter: function() {
+    textareaCounter: function () {
       // Init label textarea
-      $(".textarea-counter").each(function() {
+      $(".textarea-counter").each(function () {
         var maxlength = $(this)
           .find("textarea")
           .attr("maxlength");
@@ -245,7 +243,7 @@
           .html(maxlength);
       });
       // When typing
-      $(".textarea-counter textarea").on("input", function() {
+      $(".textarea-counter textarea").on("input", function () {
         var maxlength = $(this).attr("maxlength");
         var currentLength = $(this).val().length;
 
@@ -270,21 +268,23 @@
         }
       });
     },
-    dataTable: function() {
+    dataTable: function () {
       /* Create an array with the values of all the checkboxes in a column */
-      $.fn.dataTable.ext.order["dom-checkbox"] = function(settings, col) {
+      $.fn.dataTable.ext.order["dom-checkbox"] = function (settings, col) {
         return this.api()
-          .column(col, { order: "index" })
+          .column(col, {
+            order: "index"
+          })
           .nodes()
-          .map(function(td, i) {
+          .map(function (td, i) {
             return $("input", td).prop("checked") ? "1" : "0";
           });
       };
 
-      $(document).ready(function() {
+      $(document).ready(function () {
+        // Datatable checkbox
         var table = $(".datatable-checkbox").DataTable({
-          columnDefs: [
-            {
+          columnDefs: [{
               targets: [0],
               orderDataType: "dom-checkbox"
             },
@@ -300,9 +300,9 @@
           dom: "t"
         });
 
+        // Datatable Select All
         var tableSelectAll = $(".datatable-selectAll").DataTable({
-          columnDefs: [
-            {
+          columnDefs: [{
               targets: [0],
               orderable: false
             },
@@ -317,6 +317,7 @@
           dom: "t"
         });
 
+        // Datatable standard
         var tableStd = $(".datatable-std").DataTable({
           paging: false,
           bFilter: true,
@@ -326,13 +327,13 @@
         });
 
 
-        $(":checkbox").on("change", function(e) {
+        $(":checkbox").on("change", function (e) {
           var row = $(this).closest("tr");
           table.row(row).invalidate("dom");
           tableSelectAll.row(row).invalidate("dom");
         });
 
-        $(".dataTable").on("click", ".btn-remove", function() {
+        $(".dataTable").on("click", ".btn-remove", function () {
           table
             .row($(this).parents("tr"))
             .remove()
@@ -352,22 +353,22 @@
         $checkboxObl.addClass("no-visible");
 
         const checkObligatoire = target => {
-          target.is(":checked")
-            ? target
-                .closest("tr")
-                .find(".col-checkbox > label")
-                .removeClass("no-visible")
-            : target
-                .closest("tr")
-                .find(".col-checkbox > label")
-                .addClass("no-visible");
+          target.is(":checked") ?
+            target
+            .closest("tr")
+            .find(".col-checkbox > label")
+            .removeClass("no-visible") :
+            target
+            .closest("tr")
+            .find(".col-checkbox > label")
+            .addClass("no-visible");
         };
 
-        $checkboxItem.on("change", function(e) {
+        $checkboxItem.on("change", function (e) {
           checkObligatoire($(this));
         });
 
-        $("#customCheckAll").on("click", function(e) {
+        $(".customCheckAll").on("click", function (e) {
           if ($(this).is(":checked")) {
             $(this)
               .closest("table")
@@ -384,14 +385,14 @@
         });
       });
     },
-    customFileInput: function(){
-      $('input[type="file"]').change(function(e){
+    customFileInput: function () {
+      $('input[type="file"]').change(function (e) {
         var fileName = e.target.files[0].name;
         $('.custom-file-label').html(fileName);
       });
     },
-    showExample: function(){
-      $('#show-example').click(function(){
+    showExample: function () {
+      $('#show-example').click(function () {
         $('#example-upload').toggle();
         $('.upload-doc').toggle();
         let $target = $(this).find('a');
@@ -400,9 +401,9 @@
     }
   };
 
-  $(document).ready(function() {
+  $(document).ready(function () {
     app.init($);
-    $(window).resize(function() {
+    $(window).resize(function () {
       app.onResize();
     });
   });
