@@ -308,6 +308,14 @@ body {
   color: #838c93;
 }
 
+.custom-select.bg-gray + .select2 .select2-selection__rendered {
+    background-color: #F4F4F4;
+}
+
+.custom-select.bg-gray + .select2 .select2-selection--single {
+    border: 1px solid #F4F4F4;
+}
+
 /* .btn-remove-wrapper {
     position: absolute;
     top: 11.9px;
@@ -697,7 +705,7 @@ table.dataTable thead .sorting_asc_disabled:before,
 table.dataTable thead .sorting_desc_disabled:before {
     content: url(img/caret-up.svg);
     height: 10px;
-    top: 14px;
+    top: 30%;
     bottom: auto;
     line-height: 5px;
     left: 0;
@@ -710,7 +718,7 @@ table.dataTable thead .sorting_asc_disabled:after,
 table.dataTable thead .sorting_desc_disabled:after {
     content: url(img/caret-down.svg);
     height: 10px;
-    bottom: 14px;
+    bottom: 30%;
     top: auto;
     line-height: 1;
     left: 0;
@@ -750,7 +758,15 @@ table.dataTable thead .sorting_desc_disabled:after {
 
 .dataTable .btn-icon-wrap {
     text-align: right;
-    width: 220px;
+}
+
+table.dataTable thead>tr>th.sorting_asc, table.dataTable thead>tr>th.sorting_desc, table.dataTable thead>tr>th.sorting, table.dataTable thead>tr>td.sorting_asc, table.dataTable thead>tr>td.sorting_desc, table.dataTable thead>tr>td.sorting {
+    padding-right: 10px;
+}
+
+.btn-icon-wrap.btn-no-margin .btn {
+    margin-left: 0 !important;
+    margin-right: 5px !important;
 }
 
 
@@ -759,7 +775,8 @@ table.dataTable thead .sorting_desc_disabled:after {
 .btn-in-table {
     position: absolute;
     right: 0;
-    top: 6px;
+    top: 50%;
+    transform: translateY(-50%);
     z-index: 2;
     min-width: 230px;
 }
@@ -1013,3 +1030,7 @@ th.custom-selectAll {
     right: 7px;
     top: 8px;
 }
+
+.no-sort::after { display: none!important; }
+
+.no-sort { pointer-events: none!important; cursor: default!important; }
