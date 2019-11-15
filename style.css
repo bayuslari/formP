@@ -5,6 +5,15 @@ body {
   position: relative;
 }
 
+a:hover {
+    text-decoration: none;
+}
+
+hr {
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+
 .content {
   background-image: url("img/body-bg.png");
   background-repeat: no-repeat;
@@ -17,6 +26,12 @@ body {
   left: 0;
   right: 0;
   top: -45px;
+  margin-bottom: 78.6px;
+}
+
+.content-inner.no-top {
+    position: relative;
+    top: 0;
 }
 
 .text-primary {
@@ -60,6 +75,21 @@ body {
     padding-left: 32px;
     padding-right: 32px;
 }
+
+.btn-link {
+    color: #3275D3;
+}
+
+.btn-circle-icon {
+    border-radius: 50%;
+    background-color: #fff;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3275D3;
+}
 /* End Buttons */
 
 /* Header */
@@ -67,6 +97,7 @@ body {
   padding-top: 18px;
   padding-bottom: 64px;
   background-color: #f1f1f1;
+  position: relative;
 }
 
 .logo img {
@@ -159,7 +190,6 @@ body {
   margin-top: 50px;
   padding: 33px 31px 37px;
   background: #fff;
-  margin-bottom: 78.6px;
 }
 
 .accordion-content .card {
@@ -993,7 +1023,7 @@ th.custom-selectAll {
     border: 1px solid #E8E8EA;
 }
 
-#custom-upload .custom-file-label::after {
+.custom-upload .custom-file-label::after {
     content: url(img/circle-search.svg) !important;
     background: none;
     border: none;
@@ -1003,18 +1033,18 @@ th.custom-selectAll {
     top: auto;
 }
 
-#custom-upload .custom-file-label {
+.custom-upload .custom-file-label {
     border: none;
     text-align: center;
     font-weight: bold;
 }
 
-#custom-upload {
+.custom-upload {
     height: 95px;
 }
 
-#custom-upload .custom-file-input, 
-#custom-upload .custom-file-label {
+.custom-upload .custom-file-input, 
+.custom-upload .custom-file-label {
     height: 100%;
     padding: 24px;
 }
@@ -1034,3 +1064,413 @@ th.custom-selectAll {
 .no-sort::after { display: none!important; }
 
 .no-sort { pointer-events: none!important; cursor: default!important; }
+
+.notif-header {
+    margin-top: -50px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #3275D3;
+    color: #fff;
+    padding: 10px 15px;
+}
+
+.notif-header-name {
+    font-size: 20px;
+}
+
+.notif-header-name i {
+    margin-right: 5px;
+}
+
+a.btn-de-bord {
+    background: #001c38;
+    color: #fff;
+    padding: 7px 10px;
+    font-size: 12px;
+}
+
+.nav-header-btn {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background: #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: #001c38;
+}
+
+.nav-header-btn.active {
+    background: #001c38;
+    color: #fff;
+}
+
+.nav-header-btn.disabled {
+    color: #e1e1e1;
+}
+
+.nav-header-btn.bordered {
+    border: 7px solid #f2f2f2;
+    -webkit-box-shadow: inset 0px 0px 0px 7px #fec705;
+    -moz-box-shadow: inset 0px 0px 0px 7px #fec705;
+    box-shadow: inset 0px 0px 0px 7px #fec705;
+}
+/* Card Section */
+.card-section {
+    margin-top: 40px;
+}
+
+.card-section .card-header {
+    background: transparent;
+    border-bottom-color: transparent;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.card-section .card-header .btn-link {
+    padding: 0;
+    text-transform: uppercase;
+    position: relative;
+    padding-top: 7px;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-section .card-header .btn-link:before {
+    content: '';
+    height: 2px;
+    width: 52px;
+    background: #fec703;
+    display: block;
+    position: absolute;
+    top: 0;
+}
+
+.card-section .card-header .btn-link:after {
+    content: "";
+    background: url(img/minus-blue.svg);
+    height: 16px;
+    width: 16px;
+}
+
+.card-section .card-header .btn[aria-expanded="false"]:after {
+    background: url(img/plus-blue.svg);
+}
+
+.card-section .card-header, 
+.card-section .card-body {
+    padding: 35px 30px;
+}
+
+.card-section p {
+    color: #838C93;
+}
+
+.card-section .btn + .btn {
+    margin-left: 5px;
+}
+
+/* End Card Section */
+
+/* List */
+
+#liste-contractuels li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 14px;
+    margin-bottom: 21px;
+    background-color: #F4F4F4;
+}
+
+.list-item-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list-item-left p {
+    margin-bottom: 0;
+    font-size: 12px;
+}
+
+.list-icon {
+    font-size: 24px;
+    margin-right: 8px;
+    color: #838C93;
+    width: 30px;
+    text-align: center;
+}
+
+.list-check {
+    color: #13B865;
+}
+
+#liste-uploader .list-icon {
+    width: auto;
+    height: auto;
+}
+
+#liste-uploader li:not(.item-uploaded) .list-item-left {
+    justify-content: start;
+    align-items: flex-start;
+}
+
+#liste-uploader .list-item-left {
+    height: 100%;
+    justify-content: start;
+}
+
+#liste-uploader .list-item-left p {
+    text-transform: uppercase;
+}
+
+#liste-uploader .custom-upload .custom-file-label {
+    font-size: 12px;
+    font-weight: bold;
+    color: #838C93;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#liste-uploader .btn-circle-icon {
+    margin-left: 7px;
+}
+
+#liste-uploader .custom-upload .custom-file-label::after {
+    content: none !important;
+}
+
+#liste-uploader li {
+    margin-bottom: 21px;
+}
+
+#liste-uploader .item-uploaded .list-item-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 14px;
+    background-color: #F4F4F4;
+}
+
+#liste-uploader .item-uploaded p {
+    margin-bottom: 0;
+    font-size: 12px;
+}
+
+/* End List */
+
+/* Progress Custom */
+.progress {
+    width: 90px;
+    height: 90px;
+    line-height: 150px;
+    background: none;
+    margin: 0 auto;
+    box-shadow: none;
+    position: relative;
+  }
+  .progress:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 7px solid #eee;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .progress > span {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+  }
+  .progress .progress-left {
+    left: 0;
+  }
+  .progress .progress-bar {
+    width: 100%;
+    height: 100%;
+    background: none;
+    border-width: 7px;
+    border-style: solid;
+    position: absolute;
+    top: 0;
+    border-color: #fec705;
+  }
+  .progress .progress-left .progress-bar {
+    left: 100%;
+    border-top-right-radius: 75px;
+    border-bottom-right-radius: 75px;
+    border-left: 0;
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
+  }
+  .progress .progress-right {
+    right: 0;
+  }
+  .progress .progress-right .progress-bar {
+    left: -100%;
+    border-top-left-radius: 75px;
+    border-bottom-left-radius: 75px;
+    border-right: 0;
+    -webkit-transform-origin: center right;
+    transform-origin: center right;
+  }
+  .progress .progress-value {
+    display: flex;
+    border-radius: 50%;
+    font-size: 36px;
+    text-align: center;
+    line-height: 20px;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-weight: 300;
+  }
+  .progress .progress-value div {
+    margin-top: 10px;
+  }
+  .progress .progress-value span {
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  
+  /* This for loop creates the 	necessary css animation names 
+  Due to the split circle of progress-left and progress right, we must use the animations on each side. 
+  */
+  .progress[data-percentage="10"] .progress-right .progress-bar {
+    animation: loading-1 1.5s linear forwards;
+  }
+  .progress[data-percentage="10"] .progress-left .progress-bar {
+    animation: 0;
+  }
+  
+  .progress[data-percentage="20"] .progress-right .progress-bar {
+    animation: loading-2 1.5s linear forwards;
+  }
+  .progress[data-percentage="20"] .progress-left .progress-bar {
+    animation: 0;
+  }
+  
+  .progress[data-percentage="30"] .progress-right .progress-bar {
+    animation: loading-3 1.5s linear forwards;
+  }
+  .progress[data-percentage="30"] .progress-left .progress-bar {
+    animation: 0;
+  }
+  
+  .progress[data-percentage="40"] .progress-right .progress-bar {
+    animation: loading-4 1.5s linear forwards;
+  }
+  .progress[data-percentage="40"] .progress-left .progress-bar {
+    animation: 0;
+  }
+  
+  .progress[data-percentage="50"] .progress-right .progress-bar {
+    animation: loading-5 1.5s linear forwards;
+  }
+  .progress[data-percentage="50"] .progress-left .progress-bar {
+    animation: 0;
+  }
+  
+  .progress[data-percentage="60"] .progress-right .progress-bar {
+    animation: loading-5 1.5s linear forwards;
+  }
+  .progress[data-percentage="60"] .progress-left .progress-bar {
+    animation: loading-1 1.5s linear forwards 1.5s;
+  }
+  
+  .progress[data-percentage="70"] .progress-right .progress-bar {
+    animation: loading-5 1.5s linear forwards;
+  }
+  .progress[data-percentage="70"] .progress-left .progress-bar {
+    animation: loading-2 1.5s linear forwards 1.5s;
+  }
+  
+  .progress[data-percentage="80"] .progress-right .progress-bar {
+    animation: loading-5 1.5s linear forwards;
+  }
+  .progress[data-percentage="80"] .progress-left .progress-bar {
+    animation: loading-3 1.5s linear forwards 1.5s;
+  }
+  
+  .progress[data-percentage="90"] .progress-right .progress-bar {
+    animation: loading-5 1.5s linear forwards;
+  }
+  .progress[data-percentage="90"] .progress-left .progress-bar {
+    animation: loading-4 1.5s linear forwards 1.5s;
+  }
+  
+  .progress[data-percentage="100"] .progress-right .progress-bar {
+    animation: loading-5 1.5s linear forwards;
+  }
+  .progress[data-percentage="100"] .progress-left .progress-bar {
+    animation: loading-5 1.5s linear forwards 1.5s;
+  }
+  
+  @keyframes loading-1 {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(36);
+      transform: rotate(36deg);
+    }
+  }
+  @keyframes loading-2 {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(72);
+      transform: rotate(72deg);
+    }
+  }
+  @keyframes loading-3 {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(108);
+      transform: rotate(108deg);
+    }
+  }
+  @keyframes loading-4 {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(144);
+      transform: rotate(144deg);
+    }
+  }
+  @keyframes loading-5 {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(180);
+      transform: rotate(180deg);
+    }
+  }
+  .progress {
+    margin-bottom: 1em;
+  }
+/* End Progress Custom */
