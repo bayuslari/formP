@@ -128,7 +128,7 @@
                                                                     </div>           
                                                                 </div>
                                                                 <div class="col-md-4 ml-auto text-right">
-                                                                    <button type="button" class="btn btn-primary btn-md">Ajouter une règle de gestion</button>
+                                                                    <a href="index.html" class="btn btn-primary btn-md">Ajouter une règle de gestion</a>
                                                                 </div>
                                                             </div>
                                                             <table class="datatable-style datatable-std" cellspacing="20" width="100%">
@@ -154,12 +154,12 @@
                                                                         <td>Documentaire</td>
                                                                         <td>21/10/2019 16:12</td>
                                                                         <td class="btn-icon-wrap" width="100">
-                                                                            <button class="btn btn-icon btn-edit">
+                                                                            <a class="btn btn-icon btn-edit" href="index.html">
                                                                                 <img src="img/pen.svg" alt="">
-                                                                            </button>
-                                                                            <button class="btn btn-icon btn-remove">
+                                                                            </a>
+                                                                            <a class="btn btn-icon btn-remove">
                                                                                 <img src="img/trash.svg" alt="">
-                                                                            </button>
+                                                                            </a>
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
@@ -171,12 +171,12 @@
                                                                         <td>Documentaire</td>
                                                                         <td>21/10/2019 16:12</td>
                                                                         <td class="btn-icon-wrap">
-                                                                            <button class="btn btn-icon btn-edit">
+                                                                            <a class="btn btn-icon btn-edit" href="index.html">
                                                                                 <img src="img/pen.svg" alt="">
-                                                                            </button>
-                                                                            <button class="btn btn-icon btn-remove">
+                                                                            </a>
+                                                                            <a class="btn btn-icon btn-remove">
                                                                                 <img src="img/trash.svg" alt="">
-                                                                            </button>
+                                                                            </a>
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
@@ -188,12 +188,12 @@
                                                                         <td>Documentaire</td>
                                                                         <td>21/10/2019 16:12</td>
                                                                         <td class="btn-icon-wrap">
-                                                                            <button class="btn btn-icon btn-edit">
+                                                                            <a class="btn btn-icon btn-edit" href="index.html">
                                                                                 <img src="img/pen.svg" alt="">
-                                                                            </button>
-                                                                            <button class="btn btn-icon btn-remove">
+                                                                            </a>
+                                                                            <a class="btn btn-icon btn-remove">
                                                                                 <img src="img/trash.svg" alt="">
-                                                                            </button>
+                                                                            </a>
                                                                         </td>
                                                                     </tr>
 
@@ -212,7 +212,7 @@
                                                                     </div>           
                                                                 </div>
                                                                 <div class="col-md-4 ml-auto text-right">
-                                                                    <button type="button" class="btn btn-primary btn-md">Ajouter un document</button>
+                                                                    <button type="button" data-toggle="modal" data-target="#modal-documents-contractuels" class="btn btn-primary btn-md">Ajouter un document</button>
                                                                 </div>
                                                             </div>
                                                             <table class="datatable-style datatable-std" cellspacing="20" width="100%">
@@ -242,10 +242,10 @@
                                                                             <button type="button" class="btn btn-primary btn-md">
                                                                                 Télécharger le fichier
                                                                             </button>
-                                                                            <button type="button" class="btn btn-primary btn-md">
+                                                                            <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#modal-mise-du-fichier">
                                                                                 Mise à jour du fichier
                                                                             </button>               
-                                                                            <button class="btn btn-icon btn-look">
+                                                                            <button class="btn btn-icon btn-look" data-toggle="modal" data-target="#modal-look-detail">
                                                                                 <img src="img/eye.svg" alt="">
                                                                             </button>
                                                                             <button class="btn btn-icon btn-remove">
@@ -268,10 +268,10 @@
                                                                             <button type="button" class="btn btn-primary btn-md">
                                                                                 Télécharger le fichier
                                                                             </button>
-                                                                            <button type="button" class="btn btn-primary btn-md">
+                                                                            <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#modal-mise-du-fichier">
                                                                                 Mise à jour du fichier
                                                                             </button>               
-                                                                            <button class="btn btn-icon btn-look">
+                                                                            <button class="btn btn-icon btn-look" data-toggle="modal" data-target="#modal-look-detail">
                                                                                 <img src="img/eye.svg" alt="">
                                                                             </button>
                                                                             <button class="btn btn-icon btn-remove">
@@ -294,7 +294,7 @@
                                                                 </div>           
                                                             </div>
                                                             <div class="col-md-4 ml-auto text-right">
-                                                                <button type="button" class="btn btn-primary btn-md">Ajouter une pièce justificative</button>
+                                                                <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#modal-ajouter-justificative">Ajouter une pièce justificative</button>
                                                             </div>
                                                         </div>
                                                         <table class="datatable-style datatable-std"
@@ -448,6 +448,426 @@
                                                                         </div>
                                                                         <div class="d-flex justify-content-end">
                                                                             <button type="submit" class="btn btn-primary btn-md">Supprimer la sélection</button>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- End Modal -->
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="modal-documents-contractuels" tabindex="-1" role="dialog" aria-hidden="true">
+                                                    <div class="modal-dialog modal-lg" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title">Ajout de documents contractuels</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <img src="img/close.svg"/>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="tab-grey-content p-4">
+                                                                    <form>
+                                                                        <div class="form-group">
+                                                                            <label>Nom du document</label>
+                                                                            <input type="text" class="form-control" placeholder="">
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label>Upload du document</label>
+                                                                            <div class="upload-doc">
+                                                                                <div class="dashed">
+                                                                                    <div class="custom-file custom-upload">
+                                                                                        <input type="file" class="custom-file-input" id="customFile">
+                                                                                        <label class="custom-file-label" for="customFile">Drag'n drop ou cliquer sur l'icone ci-dessous pour parcourir</label>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div id="example-upload">
+                                                                                <div class="input-group">
+                                                                                    <input type="text" class="form-control form-control-lg" placeholder="Lorem Ispum sitamet">
+                                                                                    <div class="input-group-inside">
+                                                                                        <button type="submit" class="btn btn-primary btn-md">Annuler ce fichier</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <div class="champs">                                                                                                
+                                                                                        <div class="row no-gutters">
+                                                                                            <div class="col-md-6 card">
+                                                                                                <div class="card-header header-reconnus">
+                                                                                                    <img src="img/circle-check.svg" alt="">
+                                                                                                    Champs reconnus (5)
+                                                                                                </div>
+                                                                                                <div class="card-body body-reconnus">
+                                                                                                    <ul class="list-unstyled">
+                                                                                                        <li>NomSouscripteur</li>
+                                                                                                        <li>PrenomSouscripteur</li>
+                                                                                                        <li>DateNaissance</li>
+                                                                                                        <li>Adresse</li>
+                                                                                                        <li>CodePostal</li>
+                                                                                                    </ul>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="col-md-6 card">
+                                                                                                <div class="card-header header-inconnus">
+                                                                                                    <img src="img/circle-close.svg" alt="">
+                                                                                                    Champs inconnus (2)
+                                                                                                </div>
+                                                                                                <div class="card-body body-inconnus">
+                                                                                                    <ul class="list-unstyled">
+                                                                                                        <li>ResidenceFiscale</li>
+                                                                                                        <li>IDTechnique</li>
+                                                                                                    </ul>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label id="show-example"><a href="#">Show After Upload</a></label>
+                                                                        </div>
+                                                                        <div class="row align-items-center">
+                                                                            <div class="col-md-6">
+                                                                                <div class="form-group">
+                                                                                    <div class="custom-control custom-checkbox">
+                                                                                        <input type="checkbox" class="custom-control-input" id="typede2">
+                                                                                        <label class="custom-control-label" for="typede2">Type de justificatif spécifique à un assureur</label>
+                                                                                    </div>
+                                                                                </div>
+                                                                                
+                                                                            </div>
+                                                                            <div class="col-md-6">
+                                                                                <div class="form-group">
+                                                                                    <select class="custom-select w-100" id="Nom-de"
+                                                                                        data-placeholder="Nom de l'assureur">
+                                                                                        <option selected></option>
+                                                                                        <option value="1">One</option>
+                                                                                        <option value="2">Two</option>
+                                                                                        <option value="3">Three</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        
+                                                                        <div class="form-group col-checkbox d-flex align-items-center mt-2 mb-4">
+                                                                            <label class="switch">
+                                                                                <input type="checkbox" checked>
+                                                                                <div class="slider round"></div>
+                                                                            </label>
+                                                                            <label class="ml-2 mb-0">Obligatoire</label>
+                                                                        </div>
+
+                                                                        <div class="form-group textarea-counter">
+                                                                            <div class="textarea-label">
+                                                                                <label>Description</label>
+                                                                                <label class="label-counter">Caractères restants 
+                                                                                    <span class="length"></span>/<span class="maxlength"></span></label>
+                                                                            </div>
+    
+                                                                            <textarea class="form-control" maxlength="250"
+                                                                                rows="5"></textarea>
+                                                                        </div>
+                                                                        <div class="d-flex justify-content-end">
+                                                                            <button type="submit" class="btn btn-primary btn-md">Ajouter</button>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- End Modal -->
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="modal-mise-du-fichier" tabindex="-1" role="dialog" aria-hidden="true">
+                                                    <div class="modal-dialog modal-lg" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title">Mise à jour de Lorem Ipsum</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <img src="img/close.svg"/>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="tab-grey-content p-4">
+                                                                    <form>
+                                                                        <div class="form-group">
+                                                                            <label>Nom du document</label>
+                                                                            <input type="text" class="form-control" placeholder="">
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label>Upload du document</label>
+                                                                            <div class="upload-doc">
+                                                                                <div class="dashed">
+                                                                                    <div class="custom-file custom-upload">
+                                                                                        <input type="file" class="custom-file-input" id="customFile">
+                                                                                        <label class="custom-file-label" for="customFile">Drag'n drop ou cliquer sur l'icone ci-dessous pour parcourir</label>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div id="example-upload">
+                                                                                <div class="input-group">
+                                                                                    <input type="text" class="form-control form-control-lg" placeholder="Lorem Ispum sitamet">
+                                                                                    <div class="input-group-inside">
+                                                                                        <button type="submit" class="btn btn-primary btn-md">Annuler ce fichier</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <div class="champs">                                                                                                
+                                                                                        <div class="row no-gutters">
+                                                                                            <div class="col-md-6 card">
+                                                                                                <div class="card-header header-reconnus">
+                                                                                                    <img src="img/circle-check.svg" alt="">
+                                                                                                    Champs reconnus (5)
+                                                                                                </div>
+                                                                                                <div class="card-body body-reconnus">
+                                                                                                    <ul class="list-unstyled">
+                                                                                                        <li>NomSouscripteur</li>
+                                                                                                        <li>PrenomSouscripteur</li>
+                                                                                                        <li>DateNaissance</li>
+                                                                                                        <li>Adresse</li>
+                                                                                                        <li>CodePostal</li>
+                                                                                                    </ul>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="col-md-6 card">
+                                                                                                <div class="card-header header-inconnus">
+                                                                                                    <img src="img/circle-close.svg" alt="">
+                                                                                                    Champs inconnus (2)
+                                                                                                </div>
+                                                                                                <div class="card-body body-inconnus">
+                                                                                                    <ul class="list-unstyled">
+                                                                                                        <li>ResidenceFiscale</li>
+                                                                                                        <li>IDTechnique</li>
+                                                                                                    </ul>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label id="show-example"><a href="#">Show After Upload</a></label>
+                                                                        </div>
+                                                                        <div class="row align-items-center">
+                                                                            <div class="col-md-6">
+                                                                                <div class="form-group">
+                                                                                    <div class="custom-control custom-checkbox">
+                                                                                        <input type="checkbox" class="custom-control-input" id="typede2">
+                                                                                        <label class="custom-control-label" for="typede2">Type de justificatif spécifique à un assureur</label>
+                                                                                    </div>
+                                                                                </div>
+                                                                                
+                                                                            </div>
+                                                                            <div class="col-md-6">
+                                                                                <div class="form-group">
+                                                                                    <select class="custom-select w-100" id="Nom-de"
+                                                                                        data-placeholder="Nom de l'assureur">
+                                                                                        <option selected></option>
+                                                                                        <option value="1">One</option>
+                                                                                        <option value="2">Two</option>
+                                                                                        <option value="3">Three</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        
+                                                                        <div class="form-group col-checkbox d-flex align-items-center mt-2 mb-4">
+                                                                            <label class="switch">
+                                                                                <input type="checkbox" checked>
+                                                                                <div class="slider round"></div>
+                                                                            </label>
+                                                                            <label class="ml-2 mb-0">Obligatoire</label>
+                                                                        </div>
+
+                                                                        <div class="form-group textarea-counter">
+                                                                            <div class="textarea-label">
+                                                                                <label>Description</label>
+                                                                                <label class="label-counter">Caractères restants 
+                                                                                    <span class="length"></span>/<span class="maxlength"></span></label>
+                                                                            </div>
+    
+                                                                            <textarea class="form-control" maxlength="250"
+                                                                                rows="5"></textarea>
+                                                                        </div>
+                                                                        <div class="d-flex justify-content-end">
+                                                                            <button type="submit" class="btn btn-primary btn-md">Mettre à jour</button>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- End Modal -->
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="modal-look-detail" tabindex="-1" role="dialog" aria-hidden="true">
+                                                    <div class="modal-dialog modal-lg" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title">Bulletin EDRAC</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <img src="img/close.svg"/>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <label class="label-std mb-4">Date de création : <span class="text-primary font-weight-bold">12/10/2019</span></label>
+                                                                <div class="card champs">
+                                                                    <div class="row no-gutters">
+                                                                        <div class="col-md-6 card">
+                                                                            <div class="card-header header-reconnus">
+                                                                                <img src="img/circle-check.svg" alt="">
+                                                                                Champs reconnus (5)
+                                                                            </div>
+                                                                            <div class="card-body body-reconnus">
+                                                                                <ul class="list-unstyled">
+                                                                                    <li>NomSouscripteur</li>
+                                                                                    <li>PrenomSouscripteur</li>
+                                                                                    <li>DateNaissance</li>
+                                                                                    <li>Adresse</li>
+                                                                                    <li>CodePostal</li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-6 card">
+                                                                            <div class="card-header header-inconnus">
+                                                                                <img src="img/circle-close.svg" alt="">
+                                                                                Champs inconnus (2)
+                                                                            </div>
+                                                                            <div class="card-body body-inconnus">
+                                                                                <ul class="list-unstyled">
+                                                                                    <li>ResidenceFiscale</li>
+                                                                                    <li>IDTechnique</li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex justify-content-end">
+                                                                    <button type="button" class="btn btn-primary">Supprimer ce fichier</button>                                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- End Modal -->
+                                                 <!-- Modal -->
+                                                 <div class="modal fade" id="modal-ajouter-justificative" tabindex="-1" role="dialog" aria-hidden="true">
+                                                    <div class="modal-dialog modal-lg" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title">Ajout de pièce justificative</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <img src="img/close.svg"/>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="tab-grey-content p-4">
+                                                                    <form>
+                                                                        <div class="form-group">
+                                                                            <label>Nom du document</label>
+                                                                            <input type="text" class="form-control" placeholder="">
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label>Upload du document</label>
+                                                                            <div class="upload-doc">
+                                                                                <div class="dashed">
+                                                                                    <div class="custom-file custom-upload">
+                                                                                        <input type="file" class="custom-file-input" id="customFile">
+                                                                                        <label class="custom-file-label" for="customFile">Drag'n drop ou cliquer sur l'icone ci-dessous pour parcourir</label>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div id="example-upload">
+                                                                                <div class="input-group">
+                                                                                    <input type="text" class="form-control form-control-lg" placeholder="Lorem Ispum sitamet">
+                                                                                    <div class="input-group-inside">
+                                                                                        <button type="submit" class="btn btn-primary btn-md">Annuler ce fichier</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <div class="champs">                                                                                                
+                                                                                        <div class="row no-gutters">
+                                                                                            <div class="col-md-6 card">
+                                                                                                <div class="card-header header-reconnus">
+                                                                                                    <img src="img/circle-check.svg" alt="">
+                                                                                                    Champs reconnus (5)
+                                                                                                </div>
+                                                                                                <div class="card-body body-reconnus">
+                                                                                                    <ul class="list-unstyled">
+                                                                                                        <li>NomSouscripteur</li>
+                                                                                                        <li>PrenomSouscripteur</li>
+                                                                                                        <li>DateNaissance</li>
+                                                                                                        <li>Adresse</li>
+                                                                                                        <li>CodePostal</li>
+                                                                                                    </ul>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="col-md-6 card">
+                                                                                                <div class="card-header header-inconnus">
+                                                                                                    <img src="img/circle-close.svg" alt="">
+                                                                                                    Champs inconnus (2)
+                                                                                                </div>
+                                                                                                <div class="card-body body-inconnus">
+                                                                                                    <ul class="list-unstyled">
+                                                                                                        <li>ResidenceFiscale</li>
+                                                                                                        <li>IDTechnique</li>
+                                                                                                    </ul>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label id="show-example"><a href="#">Show After Upload</a></label>
+                                                                        </div>
+                                                                        <div class="row align-items-center">
+                                                                            <div class="col-md-6">
+                                                                                <div class="form-group">
+                                                                                    <div class="custom-control custom-checkbox">
+                                                                                        <input type="checkbox" class="custom-control-input" id="typede2">
+                                                                                        <label class="custom-control-label" for="typede2">Type de justificatif spécifique à un assureur</label>
+                                                                                    </div>
+                                                                                </div>
+                                                                                
+                                                                            </div>
+                                                                            <div class="col-md-6">
+                                                                                <div class="form-group">
+                                                                                    <select class="custom-select w-100" id="Nom-de"
+                                                                                        data-placeholder="Nom de l'assureur">
+                                                                                        <option selected></option>
+                                                                                        <option value="1">One</option>
+                                                                                        <option value="2">Two</option>
+                                                                                        <option value="3">Three</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        
+                                                                        <div class="form-group col-checkbox d-flex align-items-center mt-2 mb-4">
+                                                                            <label class="switch">
+                                                                                <input type="checkbox" checked>
+                                                                                <div class="slider round"></div>
+                                                                            </label>
+                                                                            <label class="ml-2 mb-0">Obligatoire</label>
+                                                                        </div>
+
+                                                                        <div class="form-group textarea-counter">
+                                                                            <div class="textarea-label">
+                                                                                <label>Description</label>
+                                                                                <label class="label-counter">Caractères restants 
+                                                                                    <span class="length"></span>/<span class="maxlength"></span></label>
+                                                                            </div>
+    
+                                                                            <textarea class="form-control" maxlength="250"
+                                                                                rows="5"></textarea>
+                                                                        </div>
+                                                                        <div class="d-flex justify-content-end">
+                                                                            <button type="submit" class="btn btn-primary btn-md">Ajouter</button>
                                                                         </div>
                                                                     </form>
                                                                 </div>

@@ -43,6 +43,10 @@ hr {
     border-radius: 20px;
 }
 
+a.btn {
+    line-height: 22px;
+}
+
 .btn-primary {
     background-color: #3275d3;
     font-size: 12px;
@@ -89,6 +93,15 @@ hr {
     align-items: center;
     justify-content: center;
     color: #3275d3;
+}
+
+.btn-outline-secondary.btn-blue {
+    border-color: #3275d3;
+}
+
+.btn-outline-secondary.btn-blue:hover {
+    background-color: #3175d3;
+    color: #fff;
 }
 
 /* End Buttons */
@@ -219,6 +232,10 @@ hr {
     position: relative;
     margin-bottom: 1.5rem;
     font-weight: 400;
+}
+
+.accordion-section-title h6 {
+    margin-bottom: 0;
     text-transform: uppercase;
 }
 
