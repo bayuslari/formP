@@ -786,8 +786,9 @@ table.dataTable thead .sorting_desc_disabled:after {
     margin-right: 12px;
 }
 
-.dataTable .no-sort {
-    display: none;
+.no-sort:before,
+.no-sort:after {
+    content: none !important;
 }
 
 .dataTable .btn-icon {
