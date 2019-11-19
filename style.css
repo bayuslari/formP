@@ -19,6 +19,8 @@ hr {
     background-repeat: no-repeat;
     position: relative;
     min-height: 100vh;
+    background-size: cover;
+    background-position: center;
 }
 
 .content-inner {
@@ -1521,7 +1523,35 @@ a.btn-de-bord:hover {
   
   .progress--circle.progress--100:after {
     background-image: linear-gradient(90deg, #fec705 50%, transparent 50%, transparent), linear-gradient(270deg, #fec705 50%, #f2f2f2 50%, #f2f2f2);
-  }
-  
-
+  }  
 /* End Progress Custom */
+
+/* Show More Btn Dots */
+.list-item-right {
+    position: relative;
+}
+.show-more {
+    text-align: center;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 20px 15px;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    z-index: 1;
+    width: 210px;
+    -webkit-box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.2);
+    display: none;
+}
+
+.show-more .btn + .btn {
+    margin-left: 0;
+    margin-top: 10px;
+}
+
+.dots-show-more + .show-more {
+    display: block;
+}
+/* End Show More Btn Dots */

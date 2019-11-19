@@ -66,7 +66,7 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-2">
-                                            <button class="btn nav-header-btn progress" type="button">
+                                            <button type="button" class="btn nav-header-btn progress">
                                                 <div class="progress--circle progress--75">
                                                     <div class="progress__content">
                                                         <i class="fas fa-chart-line"></i>
@@ -76,25 +76,25 @@
                                             <h6 class="nav-header-text">PROFILE DE RISQUE</h6>
                                         </div>     
                                         <div class="col-md-2">
-                                            <button class="btn nav-header-btn" type="button">
+                                            <button type="button" class="btn nav-header-btn">
                                                 <i class="fas fa-chart-pie"></i>
                                             </button>
                                             <h6 class="nav-header-text">ALLOCATION</h6>
                                         </div>
                                         <div class="col-md-2">
-                                            <button class="btn nav-header-btn" type="button">
+                                            <button type="button" class="btn nav-header-btn">
                                                 <i class="fas fa-check"></i>
                                             </button>
                                             <h6 class="nav-header-text">VALIDATION DATA</h6>
                                         </div>
                                         <div class="col-md-2">
-                                            <button class="btn nav-header-btn disabled" type="button">
+                                            <button type="button" class="btn nav-header-btn disabled">
                                                 <i class="fas fa-file"></i>
                                             </button>
                                             <h6 class="nav-header-text">BULLETIN D'ARBITRAGE</h6>
                                         </div>
                                         <div class="col-md-2">
-                                            <button class="btn nav-header-btn active" type="button">
+                                            <button type="button" class="btn nav-header-btn active">
                                                 <i class="fas fa-clipboard-check"></i>
                                             </button>
                                             <h6 class="nav-header-text">CHECK LIST</h6>
@@ -148,9 +148,17 @@
                                                     <p>Bulletin Edrac</p>
                                                 </div>
                                                 <div class="list-item-right">
-                                                    <a href="#" class="btn btn-circle-icon">
+                                                    <button type="button" class="btn btn-circle-icon btn-dots">
                                                         <i class="fas fa-ellipsis-h"></i>
-                                                    </a>
+                                                    </button>
+                                                    <div class="show-more">
+                                                        <button type="button" class="btn btn-primary btn-md">
+                                                            Télécharger le fichier
+                                                        </button>
+                                                        <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#modal-mise-du-fichier">
+                                                            Mise à jour du fichier
+                                                        </button>
+                                                    </div>
                                                 </div>
                                             </li>
                                             <li>
@@ -162,7 +170,7 @@
                                                     <button type="button" class="btn btn-primary btn-md">
                                                         Télécharger le fichier
                                                     </button>
-                                                    <button type="button" class="btn btn-primary btn-md">
+                                                    <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#modal-mise-du-fichier">
                                                         Mise à jour du fichier
                                                     </button>
                                                 </div>
@@ -176,7 +184,7 @@
                                                     <button type="button" class="btn btn-primary btn-md">
                                                         Télécharger le fichier
                                                     </button>
-                                                    <button type="button" class="btn btn-primary btn-md">
+                                                    <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#modal-mise-du-fichier">
                                                         Mise à jour du fichier
                                                     </button>
                                                 </div>
@@ -190,14 +198,105 @@
                                                     <button type="button" class="btn btn-primary btn-md">
                                                         Télécharger le fichier
                                                     </button>
-                                                    <button type="button" class="btn btn-primary btn-md">
+                                                    <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#modal-mise-du-fichier">
                                                         Mise à jour du fichier
                                                     </button>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="list-item-left">
+                                                    <i class="fas fa-check list-check list-icon"></i>
+                                                    <p>Bulletin Edrac</p>
+                                                </div>
+                                                <div class="list-item-right">
+                                                    <button type="button" class="btn btn-circle-icon btn-dots">
+                                                        <i class="fas fa-ellipsis-h"></i>
+                                                    </button>
+                                                    <div class="show-more">
+                                                        <button type="button" class="btn btn-primary btn-md">
+                                                            Télécharger le fichier
+                                                        </button>
+                                                        <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#modal-mise-du-fichier">
+                                                            Mise à jour du fichier
+                                                        </button>
+                                                    </div>
                                                 </div>
                                             </li>
                                         </ul>
                                         <!-- End Lists -->
                                     </div>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="modal-mise-du-fichier" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Mise à jour du fichier</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <img src="img/close.svg"/>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="tab-grey-content p-4">
+                                                        <form>
+                                                            <div class="form-group">
+                                                                <label>Upload du document</label>
+                                                                <div class="upload-doc">
+                                                                    <div class="dashed">
+                                                                        <div class="custom-file custom-upload">
+                                                                            <input type="file" class="custom-file-input" id="customFile">
+                                                                            <label class="custom-file-label" for="customFile">Drag'n drop ou cliquer sur l'icone ci-dessous pour parcourir</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div id="example-upload">
+                                                                    <div class="input-group">
+                                                                        <input type="text" class="form-control form-control-lg" placeholder="Lorem Ispum sitamet">
+                                                                        <div class="input-group-inside">
+                                                                            <button type="submit" class="btn btn-primary btn-md">Annuler ce fichier</button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div class="champs">                                                                                                
+                                                                            <div class="row no-gutters">
+                                                                                <div class="col-md-6 card">
+                                                                                    <div class="card-header header-reconnus">
+                                                                                        <img src="img/circle-check.svg" alt="">
+                                                                                        Champs reconnus (5)
+                                                                                    </div>
+                                                                                    <div class="card-body body-reconnus">
+                                                                                        <ul class="list-unstyled">
+                                                                                            <li>NomSouscripteur</li>
+                                                                                            <li>PrenomSouscripteur</li>
+                                                                                            <li>DateNaissance</li>
+                                                                                            <li>Adresse</li>
+                                                                                            <li>CodePostal</li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-6 card">
+                                                                                    <div class="card-header header-inconnus">
+                                                                                        <img src="img/circle-close.svg" alt="">
+                                                                                        Champs inconnus (2)
+                                                                                    </div>
+                                                                                    <div class="card-body body-inconnus">
+                                                                                        <ul class="list-unstyled">
+                                                                                            <li>ResidenceFiscale</li>
+                                                                                            <li>IDTechnique</li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Modal -->
                                 </div>
                             </div>
                         </div>

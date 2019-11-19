@@ -18,6 +18,7 @@
       app.dataTable();
       app.customFileInput();
       app.showExample();
+      app.btnDots();
     },
 
     onResize: function () {
@@ -398,6 +399,17 @@
         let $target = $(this).find('a');
         $target.html($target.html() == 'Show After Upload' ? 'Show Before Upload' : 'Show After Upload');
       })
+    },
+    btnDots: function(){
+      $('.btn-dots').click(function () {
+        $(this).siblings().toggle();
+      })
+      $(document).click(function (e) {
+        var $tgt = $(e.target);
+        if ($tgt.closest(".btn-dots").length === 0 && $tgt.closest(".dots-show-more").length === 0) {
+            $(".show-more").css('display', 'none');
+        }
+      });
     }
   };
 
